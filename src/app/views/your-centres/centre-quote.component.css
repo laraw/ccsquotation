@@ -1,0 +1,47 @@
+.or {
+    color: darkblue;
+}
+a {
+    text-decoration: underline !important;
+}
+
+
+@media print {
+    input { border: none !important; }
+}
+
+@media print, screen { 
+    #Header, #Footer { display: none !important; }
+    
+        @page { margin: 0; }
+        body { margin: 1.6cm; }
+        .Header {
+            display: none;
+           }
+       
+
+} 
+
+.btn-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.float-right {
+    float: right !important;
+}
+
+thead {
+    font-size: 18px;
+}
+
+
+
+@media print
+{    
+    .noprint, .noprint *
+    {
+        display: none !important;
+    }
+}

@@ -1,0 +1,82 @@
+{
+  "centres": [
+    {
+      "id": 1,
+      "name": "Amazing Centre",
+      "address": "5 Smith Street",
+      "phone": "1800 000 0555"
+    },
+    {
+      "id": 2,
+      "address": "Albert Street",
+      "name": "Albert Centre",
+      "phone": "12345"
+    },
+    {
+      "id": 3,
+      "address": "Sebastian Street",
+      "name": "Sebastian Centre",
+      "phone": "2342343"
+    },
+    {
+      "id": 5,
+      "name": "Alex Centre",
+      "address": "Smith Street",
+      "phone": "123456"
+    },
+    {
+      "id": 7,
+      "name": "Green Centre",
+      "address": "Smith Street",
+      "phone": "123456"
+    },
+    {
+      "id": 8,
+      "name": "Smith Centre",
+      "address": "51 Smith Street",
+      "phone": "123456"
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "centreId": 1,
+      "roomName": "Nursery"
+    },
+    {
+      "id": 2,
+      "centreId": 1,
+      "roomName": "Toddlers A"
+    },
+    {
+      "id": 3,
+      "centreId": 1,
+      "roomName": "Toddlers B"
+    },
+    {
+      "id": 4,
+      "centreId": 1,
+      "roomName": "Kindergarten"
+    },
+    {
+      "id": 6,
+      "centreId": 2,
+      "roomName": "Nursery"
+    },
+    {
+      "id": 7,
+      "centreId": 2,
+      "roomName": "Toddlers A"
+    },
+    {
+      "id": 8,
+      "centreId": 2,
+      "roomName": "Toddlers B"
+    },
+    {
+      "id": 9,
+      "centreId": 2,
+      "roomName": "Kindergarten"
+    }
+  ]
+}
