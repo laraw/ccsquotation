@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
-import { Centre } from '../../core/models';
-import { CentreService } from '../../core/services';
+import { Observable, Subject } from 'rxjs';
+import { Centre, Room } from '../../core/models';
+import { CentreService, RoomService } from '../../core/services';
+import {
+  debounceTime, distinctUntilChanged, switchMap
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-centre-detail',
@@ -15,31 +18,45 @@ export class CentreDetailComponent implements OnInit {
   success: boolean;
   dismissible = true;
   alertsDismiss: any = [];
+  rooms: Room[];
+  private searchTerms = new Subject<string>();
+
+
   constructor(
     private route: ActivatedRoute,
     private centreService: CentreService,
-    private location: Location
+    private roomService: RoomService,
+    private location: Location,
+    
   ) {}
 
   ngOnInit(): void {
+    
     console.log("hello world");
     this.success = false;
     this.getCentre();
+
   }
 
   getCentre(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.centreService.getCentre(id)
-      .subscribe(centre => this.centre = centre);
+      .subscribe(
+        centre => {
+          this.centre = centre;
+          this.getRooms();
+        }
+        
+        );
+    
+    
   }
 
 
   getRooms(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.centreService.getCentre(id)
-      .subscribe(centre => this.centre = centre);
+    this.roomService.getRoomsByCentre(id).subscribe(rooms => this.rooms = rooms);
   }
 
 

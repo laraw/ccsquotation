@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CentreSearchComponent } from './centre-search.component';
 import { CentreQuoteComponent } from './centre-quote.component';
 import { CentreDetailComponent } from './centre-detail.component';
+import { RoomListComponent } from './room-list.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,13 @@ const routes: Routes = [
             component: CentreDetailComponent,
             data: {
               title: 'detail'
+            }
+          },
+          {
+            path: 'room-list',
+            component: RoomListComponent,
+            data: {
+              title: 'roomlist'
             }
           },
           

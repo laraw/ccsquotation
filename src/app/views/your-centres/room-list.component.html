@@ -1,0 +1,63 @@
+<!-- Editable table -->
+<div class="card">
+
+    <div class="card-body">
+      <div id="table" class="table-editable" >
+        <span class="table-add float-right mb-3 mr-2">
+          <button class="btn-success btn " (click)="add()">
+            Add
+          </button>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center" >
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Min Age</th>
+            <th class="text-center">Max Age</th>
+            <th class="text-center">Child Ratio</th>
+            <th class="text-center">Staff Ratio</th>
+            <th class="text-center">Capacity</th>
+            <th class="text-center">Daily Rate</th>
+            <th class="text-center">Actions</th>
+          </tr>
+          
+          <tr *ngFor="let room of roomList; let id = index" >
+            <td>
+              <!-- <span contenteditable="true"  (blur)="updateList(id, 'roomName', $event)" >{{room.roomName}}</span> -->
+              <span contenteditable (keyup)="changeValue(id, 'roomName', $event)" (blur)="updateList(id, 'roomName', $event)"> {{room.roomName}}</span>
+            </td>
+            <td>
+              <span contenteditable (keyup)="changeValue(id, 'minAge', $event)" (blur)="updateList(id, 'minAge', $event)" >{{room.minAge}}</span>
+            </td>
+            <td>
+                <span contenteditable  (keyup)="changeValue(id, 'maxAge', $event)" (blur)="updateList(id, 'maxAge', $event)">{{room.maxAge}}</span>
+            </td>
+            <td>
+                <span contenteditable  (keyup)="changeValue(id, 'childRatio', $event)" (blur)="updateList(id, 'childRatio', $event)" >{{room.childRatio}}</span>
+            </td>
+            <td>
+                <span contenteditable (keyup)="changeValue(id, 'staffRatio', $event)" (blur)="updateList(id, 'staffRatio', $event)">{{room.staffRatio}}</span>
+            </td>
+            <td>
+                <span contenteditable  (keyup)="changeValue(id, 'capacity', $event)" (blur)="updateList(id, 'capacity', $event)">{{room.capacity}}</span>
+            </td>
+            <td>
+                <span contenteditable  (keyup)="changeValue(id, 'dailyRate', $event)" (blur)="updateList(id, 'dailyRate', $event)">{{room.dailyRate}}</span>
+            </td>
+  
+            <td>
+              <span class="table-remove">
+                <!-- <button type="button" class="btn-success"  (click)="update(id)"><i class="fa fa-save"></i></button> -->
+                <button type="button" class="btn-primary"  (click)="update(id)"><i class="fa fa-pencil"></i></button>
+                <button type="button" class="btn-danger"  (click)="remove(id)"><i class="fa fa-remove"></i></button>
+                <!-- <button type="button" class="btn-sm btn-danger" (click)="remove(id)">Delete</button> -->
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+    
+    
+  </div>
+  <!-- Editable table -->

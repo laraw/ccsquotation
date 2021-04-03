@@ -40,43 +40,146 @@
   "rooms": [
     {
       "id": 1,
-      "centreId": 1,
-      "roomName": "Nursery"
+      "roomName": ""
     },
     {
       "id": 2,
       "centreId": 1,
-      "roomName": "Toddlers A"
-    },
-    {
-      "id": 3,
-      "centreId": 1,
-      "roomName": "Toddlers B"
+      "roomName": "Nursery",
+      "minAge": "25",
+      "maxAge": "35",
+      "childRatio": "1",
+      "staffRatio": "5",
+      "capacity": "4",
+      "dailyRate": "95.00"
     },
     {
       "id": 4,
       "centreId": 1,
-      "roomName": "Kindergarten"
+      "roomName": "kindergarten A",
+      "minAge": "0",
+      "maxAge": "12",
+      "childRatio": "1",
+      "staffRatio": "4",
+      "capacity": "4",
+      "dailyRate": "95.00"
     },
     {
       "id": 6,
       "centreId": 2,
-      "roomName": "Nursery"
+      "roomName": "Nursery",
+      "minAge": "0",
+      "maxAge": "12",
+      "childRatio": "1",
+      "staffRatio": "4",
+      "capacity": "4",
+      "dailyRate": "95.00"
     },
     {
       "id": 7,
       "centreId": 2,
-      "roomName": "Toddlers A"
+      "roomName": "Toddlers A",
+      "minAge": "0",
+      "maxAge": "12",
+      "childRatio": "1",
+      "staffRatio": "4",
+      "capacity": "4",
+      "dailyRate": "95.00"
     },
     {
       "id": 8,
       "centreId": 2,
-      "roomName": "Toddlers B"
+      "roomName": "Toddlers B",
+      "minAge": "0",
+      "maxAge": "12",
+      "childRatio": "1",
+      "staffRatio": "4",
+      "capacity": "4",
+      "dailyRate": "95.00"
     },
     {
       "id": 9,
       "centreId": 2,
-      "roomName": "Kindergarten"
+      "roomName": "Kindergarten",
+      "minAge": "0",
+      "maxAge": "12",
+      "childRatio": "1",
+      "staffRatio": "4",
+      "capacity": "4",
+      "dailyRate": "95.00"
+    },
+    {
+      "id": 10,
+      "roomName": "NurseryNurseryNursery",
+      "minAge": "0",
+      "maxAge": "10",
+      "childRatio": "1",
+      "staffRatio": "5",
+      "capacity": "4",
+      "dailyRate": "95"
+    },
+    {
+      "id": 11,
+      "roomName": "Kinder",
+      "minAge": "0",
+      "maxAge": "5",
+      "childRatio": ""
+    },
+    {
+      "id": 12,
+      "roomName": "Test",
+      "minAge": "0",
+      "maxAge": "11",
+      "childRatio": "1",
+      "staffRatio": "1",
+      "capacity": "1",
+      "dailyRate": "1"
+    },
+    {
+      "id": 13,
+      "centreId": 1,
+      "roomName": "Kindergarten B",
+      "minAge": "35",
+      "maxAge": "45",
+      "childRatio": "1",
+      "staffRatio": "5",
+      "dailyRate": "111",
+      "capacity": "5",
+      "name": "111"
+    },
+    {
+      "id": 14,
+      "centreId": 1,
+      "name": "Pre-Kindy",
+      "minAge": "25",
+      "maxAge": "35",
+      "childRatio": "1",
+      "staffRatio": "5",
+      "capacity": "5",
+      "dailyRate": "77",
+      "roomName": "Pre-Kindy"
+    },
+    {
+      "id": 15,
+      "centreId": 1,
+      "childRatio": "1",
+      "staffRatio": "5",
+      "minAge": "25",
+      "maxAge": "35",
+      "dailyRate": "89",
+      "capacity": "5",
+      "roomName": "Toddlers A"
+    },
+    {
+      "id": 16,
+      "centreId": 1,
+      "childRatio": "1",
+      "staffRatio": "5",
+      "minAge": "25",
+      "maxAge": "35",
+      "dailyRate": "89",
+      "capacity": "5",
+      "roomName": "Toddlers B"
     }
   ]
 }

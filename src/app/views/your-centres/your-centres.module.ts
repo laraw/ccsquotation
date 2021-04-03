@@ -9,6 +9,7 @@ import { CentreQuoteComponent } from './centre-quote.component';
 import { CentreSearchComponent } from './centre-search.component';
 import { MessagesComponent } from '../../views/error/messages.component';
 import { CentreDetailComponent } from './centre-detail.component';
+import { RoomListComponent } from './room-list.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { CentreDetailComponent } from './centre-detail.component';
     CentreQuoteComponent,
     CentreSearchComponent,
     MessagesComponent,
-    CentreDetailComponent
+    CentreDetailComponent,
+    RoomListComponent
 
   ],
   exports: [

@@ -22,14 +22,28 @@ export class RoomService {
     private messageService: MessageService) { }
 
 
-    /** GET rooms from the server */
-    getRoomsByCentre(centreId: string): Observable<Room[]> {
-        return this.http.get<Room[]>(`${this.roomsUrl}/?centreId=${centreId}`)
-          .pipe(
-            tap(_ => this.log('fetched rooms')),
-            catchError(this.handleError<Room[]>('getRoomsByCentre', []))
-          );
-      }
+  /** GET rooms by Centre. Will 404 if id not found */
+  getRoomsByCentre(id: number): Observable<Room[]> {
+    const url = `${this.roomsUrl}/?centreId=${id}`;
+    return this.http.get<Room[]>(url).pipe(
+      tap(_ => this.log(`fetched rooms for centre id=${id}`)),
+      catchError(this.handleError<Room[]>(`getRoomsByCentre Centreid=${id}`))
+    );
+  }
+
+  /* TODO NOTE - THIS WONT BE REQUIRED WHEN DATA / SERVICE LAYER IMPLEMENTED  */
+  /** GET rooms by Centre. Will 404 if id not found */
+  getAllRooms(): Observable<Room[]> {
+ 
+
+    return this.http.get<Room[]>(this.roomsUrl)
+    .pipe(
+      tap(_ => this.log('fetched rooms')),
+      catchError(this.handleError<Room[]>('getRooms', []))
+    );
+
+  }
+
 
   /** GET room by id. Return `undefined` when id not found */
   getRoomNo404<Data>(id: number): Observable<Room> {
