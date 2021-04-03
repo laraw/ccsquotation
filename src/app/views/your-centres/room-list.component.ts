@@ -21,6 +21,7 @@ export class RoomListComponent implements OnInit {
         this.contentEditable = false;
     
         this.roomService.getRoomsByCentre(this.centreId).subscribe(rooms => { this.roomList = rooms; this.awaitingRoomList = rooms; } );
+        
     }
 
     constructor(
@@ -39,7 +40,7 @@ export class RoomListComponent implements OnInit {
     remove(id: any) {
       
       if(id) {
-      this.roomService.deleteRoom(id).subscribe(() => { this.roomList.splice(id, 1); });;
+      this.roomService.deleteRoom(this.roomList[id].id).subscribe(() => { this.roomList.splice(id, 1); });;
       }
       else {
         this.roomList.splice(id, 1);
@@ -58,7 +59,7 @@ export class RoomListComponent implements OnInit {
       newroom.dailyRate = " ";
       newroom.capacity = " ";
       this.roomList.push(newroom);
-    
+      this.contentEditable = true;
       
 
     }

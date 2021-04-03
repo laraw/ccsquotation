@@ -35,6 +35,15 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/src/app/views/base
+/src/app/views/buttons
+/src/app/views/chartjs
+/src/app/views/icons
+/src/app/views/notifications
+/src/app/views/theme
+/src/app/views/widgets
+
+
 
 # e2e
 /e2e/*.js

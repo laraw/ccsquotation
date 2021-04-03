@@ -1,0 +1,32 @@
+<td>
+    <!-- <span contenteditable="true"  (blur)="updateList(id, 'roomName', $event)" >{{room.roomName}}</span> -->
+    <span [contentEditable]="contentEditable" (keyup)="changeValue(id, 'roomName', $event)" (blur)="updateList(id, 'roomName', $event)"> {{room.roomName}}</span>
+  </td>
+  <td>
+    <span [contentEditable]="contentEditable" (keyup)="changeValue(id, 'minAge', $event)" (blur)="updateList(id, 'minAge', $event)" >{{room.minAge}}</span>
+  </td>
+  <td>
+      <span [contentEditable]="contentEditable"  (keyup)="changeValue(id, 'maxAge', $event)" (blur)="updateList(id, 'maxAge', $event)">{{room.maxAge}}</span>
+  </td>
+  <td>
+      <span [contentEditable]="contentEditable"  (keyup)="changeValue(id, 'childRatio', $event)" (blur)="updateList(id, 'childRatio', $event)" >{{room.childRatio}}</span>
+  </td>
+  <td>
+      <span [contentEditable]="contentEditable" (keyup)="changeValue(id, 'staffRatio', $event)" (blur)="updateList(id, 'staffRatio', $event)">{{room.staffRatio}}</span>
+  </td>
+  <td>
+      <span [contentEditable]="contentEditable"  (keyup)="changeValue(id, 'capacity', $event)" (blur)="updateList(id, 'capacity', $event)">{{room.capacity}}</span>
+  </td>
+  <td>
+      <span [contentEditable]="contentEditable"  (keyup)="changeValue(id, 'dailyRate', $event)" (blur)="updateList(id, 'dailyRate', $event)">{{room.dailyRate}}</span>
+  </td>
+
+  <td>
+    <span class="table-remove">
+      <button type="button" class="btn-success" *ngIf="contentEditable"  (click)="update(id)"><i class="fa fa-save"></i>Save</button> 
+      <button type="button" class="btn-primary" *ngIf="!contentEditable"  (click)="edit(id)"><i class="fa fa-pencil"></i>Edit</button>
+
+      <button type="button" class="btn-danger"   (click)="remove(id)"><i class="fa fa-remove"></i>Remove</button>
+      <!-- <button type="button" class="btn-sm btn-danger" (click)="remove(id)">Delete</button> -->
+    </span>
+  </td>

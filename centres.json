@@ -54,17 +54,6 @@
       "dailyRate": "95.00"
     },
     {
-      "id": 4,
-      "centreId": 1,
-      "roomName": "kindergarten A",
-      "minAge": "0",
-      "maxAge": "12",
-      "childRatio": "1",
-      "staffRatio": "4",
-      "capacity": "4",
-      "dailyRate": "95.00"
-    },
-    {
       "id": 6,
       "centreId": 2,
       "roomName": "Nursery",
@@ -158,28 +147,6 @@
       "capacity": "5",
       "dailyRate": "77",
       "roomName": "Pre-Kindy"
-    },
-    {
-      "id": 15,
-      "centreId": 1,
-      "childRatio": "1",
-      "staffRatio": "5",
-      "minAge": "25",
-      "maxAge": "35",
-      "dailyRate": "89",
-      "capacity": "5",
-      "roomName": "Toddlers A"
-    },
-    {
-      "id": 16,
-      "centreId": 1,
-      "childRatio": "1",
-      "staffRatio": "5",
-      "minAge": "25",
-      "maxAge": "35",
-      "dailyRate": "89",
-      "capacity": "5",
-      "roomName": "Toddlers B"
     }
   ]
 }
