@@ -169,6 +169,17 @@
       "capacity": "X",
       "dailyRate": "X",
       "centreId": 1
+    },
+    {
+      "id": 17,
+      "name": "Pre-Kindy B",
+      "minAge": "1",
+      "maxAge": "4",
+      "childRatio": "1",
+      "staffRatio": "5",
+      "capacity": "5",
+      "dailyRate": "55",
+      "centreId": 1
     }
   ]
 }

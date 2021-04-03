@@ -3,5 +3,8 @@ export interface Centre {
   name: string;
   address: string;
   phone: string;
+  lat: number;
+  long: number;
+  
 
 }
