@@ -10,6 +10,8 @@ import { CentreSearchComponent } from './centre-search.component';
 import { MessagesComponent } from '../../views/error/messages.component';
 import { CentreDetailComponent } from './centre-detail.component';
 import { RoomListComponent } from './room-list.component';
+import { RoomListLineComponent } from './room-list-line.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
@@ -18,7 +20,7 @@ import { RoomListComponent } from './room-list.component';
     YourCentresRoutingModule,
     ReactiveFormsModule,
     CommonModule,
-    
+    ModalModule.forRoot()
     
   ],
   declarations: [
@@ -26,7 +28,8 @@ import { RoomListComponent } from './room-list.component';
     CentreSearchComponent,
     MessagesComponent,
     CentreDetailComponent,
-    RoomListComponent
+    RoomListComponent,
+    RoomListLineComponent
 
   ],
   exports: [

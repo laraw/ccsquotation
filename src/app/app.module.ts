@@ -11,6 +11,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
 import { HttpClientModule } from '@angular/common/http'
 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };

@@ -1,10 +1,19 @@
-<div class="animated fadeIn">
+<div class="animated fadeIn" *ngIf="centre">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{centre.name }} </h2> 
+                </div>
+            </div>
+        </div>
 
-    <div class="row" *ngIf="centre">
+    </div>
+    <div class="row">
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <strong>{{centre.name }} - Details</strong> 
+              <strong> Details</strong> 
             </div>
             <div class="card-body">
               <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -52,9 +61,10 @@
 
         </div>
         <div class="col">
+            
             <div class="card"> 
                 <div class="card-header">
-                    <strong>{{centre.name }} rooms </strong> 
+                    <strong>Offerings </strong> 
                  </div>
                  <div class="card-body">
                     <ul>
@@ -63,9 +73,15 @@
                  </div>
 
             </div>
-            
+             -->
         </div>
 
+   </div>
+   <div class="row">
+       <div class="col">
+        <room-list [centreId]="centre.id"></room-list>
+     </div>
+    
    </div>
 
 </div>

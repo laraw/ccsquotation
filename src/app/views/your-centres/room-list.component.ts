@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Room } from '../../core/models';
 import { RoomService } from '../../core/services';
+import { Input } from '@angular/core';
+import { ViewChild} from '@angular/core';
+import {ModalDirective, BsModalRef} from 'ngx-bootstrap/modal';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'room-list',
@@ -9,17 +13,25 @@ import { RoomService } from '../../core/services';
 })
 
 export class RoomListComponent implements OnInit {
-    editField: string;
+    @Input() centreId: number;
     roomList: Room[];
     awaitingRoomList: Room[];
-    newRoom: Room;
-    contentEditable: boolean;
-    centreId: number;
+    // newRoom: Room;
+    @ViewChild('largeModal') public largeModal: ModalDirective;
+
+    newRoom = new FormGroup( {
+        name: new FormControl(''),
+        minAge: new FormControl(''),
+        maxAge: new FormControl(''),
+        childRatio: new FormControl(''),
+        staffRatio: new FormControl(''),
+        capacity: new FormControl(''),
+        dailyRate: new FormControl('')
+    })
 
     ngOnInit(): void {
-        this.centreId = 1;
-        this.contentEditable = false;
-    
+        // this.centreId = 1;
+
         this.roomService.getRoomsByCentre(this.centreId).subscribe(rooms => { this.roomList = rooms; this.awaitingRoomList = rooms; } );
         
     }
@@ -32,62 +44,51 @@ export class RoomListComponent implements OnInit {
         
       ) {}
 
-      updateList(id: number, property: string, event: any) {
-        const editField = event.target.textContent;
-        this.roomList[id][property] = editField;
-      }
+      onSubmit() {
+        // TODO: Use EventEmitter with form value
+        // console.warn(this.newRoom.value.name);
+        let formvalues = this.newRoom.value;
+ 
+        this.roomService.getAllRooms().subscribe(rooms => { 
+               
+                const newitem = {} as Room;
+                newitem.id = Math.max(...rooms.map(o=>o.id)) +1;;
+                newitem.name = formvalues.name;
+                newitem.minAge = formvalues.minAge;
+                newitem.maxAge = formvalues.maxAge;
+                newitem.childRatio = formvalues.childRatio;
+                newitem.staffRatio = formvalues.staffRatio;
+                newitem.capacity = formvalues.capacity;
+                newitem.dailyRate = formvalues.dailyRate;
+                newitem.centreId = this.centreId;
+                this.roomService.addRoom(newitem).subscribe();
+                this.roomList.push(
+                    newitem                
 
-    remove(id: any) {
-      
-      if(id) {
-      this.roomService.deleteRoom(this.roomList[id].id).subscribe(() => { this.roomList.splice(id, 1); });;
-      }
-      else {
-        this.roomList.splice(id, 1);
-      }
+                );
+                
+        })
     }
 
     add() {
 
-      var newroom: Room = <Room> { };
-      newroom.id = 0;
-      newroom.centreId = this.centreId;
-      newroom.childRatio = " ";
-      newroom.staffRatio = " ";
-      newroom.minAge = " ";
-      newroom.maxAge = " ";
-      newroom.dailyRate = " ";
-      newroom.capacity = " ";
-      this.roomList.push(newroom);
-      this.contentEditable = true;
+    //   var newroom: Room = <Room> { };
+    //   newroom.id = 0;
+    //   newroom.centreId = this.centreId;
+    //   newroom.childRatio = " ";
+    //   newroom.staffRatio = " ";
+    //   newroom.minAge = " ";
+    //   newroom.maxAge = " ";
+    //   newroom.dailyRate = " ";
+    //   newroom.capacity = " ";
+    //   this.roomList.push(newroom);
+
       
 
     }
 
-    changeValue(id: number, property: string, event: any) {
-        this.editField = event.target.textContent;
-      }
+    
 
-
-    edit() {
-        this.contentEditable = true;
-    }
-
-    update(id: number) {
-
-        if(this.roomList[id].id == 0) {
-            this.roomService.getAllRooms().subscribe(rooms => { 
-                this.roomList[id].id = Math.max(...rooms.map(o=>o.id)) +1;
-                this.roomService.addRoom(this.roomList[id]).subscribe();
-              })
-        } else {
-            this.updateRoom(this.roomList[id]);
-        }
-        
-    }
-    updateRoom(room: Room) {
-        this.roomService.updateRoom(room).subscribe(() => this.showSuccess());
-    }
     showSuccess() {
         
     }
