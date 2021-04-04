@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CentreSearchComponent } from './centre-search.component';
+import { FindACentreComponent } from './find-a-centre.component';
 import { CentreQuoteComponent } from './centre-quote.component';
-import { CentreDetailComponent } from './centre-detail.component';
-import { RoomListComponent } from './room-list.component';
+
 
 const routes: Routes = [
   {
@@ -14,13 +13,13 @@ const routes: Routes = [
     children: [
         {
             path: '',
-            redirectTo: 'centre-search'
+            redirectTo: 'find-a-centre'
           },
           {
-            path: 'centre-search',
-            component: CentreSearchComponent,
+            path: 'find-a-centre',
+            component: FindACentreComponent,
             data: {
-              title: 'centre-search'
+              title: 'Find a Centre'
             }
           },
           {
@@ -30,20 +29,7 @@ const routes: Routes = [
               title: 'centre-quote'
             }
           },
-          {
-            path: 'detail/:id',
-            component: CentreDetailComponent,
-            data: {
-              title: 'detail'
-            }
-          },
-          {
-            path: 'room-list',
-            component: RoomListComponent,
-            data: {
-              title: 'roomlist'
-            }
-          },
+ 
           
     ]
   }

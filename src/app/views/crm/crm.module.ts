@@ -4,27 +4,28 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Components Routing
-import { YourCentresRoutingModule } from './your-centres-routing.module';
-import { CentreQuoteComponent } from './centre-quote.component';
+
+import { MessagesComponent } from '../../views/error/messages.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { FindACentreComponent } from './find-a-centre.component';
+import { FamiliesComponent } from './families.component';
+import { CrmRoutingModule } from './crm-routing.module'
 
 @NgModule({
   imports: [
 
     FormsModule,
-    YourCentresRoutingModule,
+    CrmRoutingModule,
     ReactiveFormsModule,
     CommonModule,
     ModalModule.forRoot()
     
   ],
   declarations: [
-    CentreQuoteComponent,
-    FindACentreComponent,
 
 
+    MessagesComponent,
+    FamiliesComponent
 
   ],
   exports: [
@@ -32,4 +33,4 @@ import { FindACentreComponent } from './find-a-centre.component';
 
   ]
 })
-export class YourCentresModule { }
+export class CrmModule { }

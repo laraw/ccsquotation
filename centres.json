@@ -4,37 +4,59 @@
       "id": 1,
       "name": "Amazing Centre",
       "address": "5 Smith Street",
-      "phone": "1800 000 0555"
+      "suburb": "x",
+      "postcode": "x",
+       "state": "x",
+       "country": "x",
+
+      "phone": "1800 000 0555",
+      "lat": 555.2,
+      "long": 555.1,
+      "description": "xxxx",
+      "nqsrating": "xx",
+      "email": "xxx",
+      "offering": [ { "id": 1, "description": "x", "icon:": "x" }],
+      "photos": [ { "id": 1, "fileUrl": "x", "fileType": "x", "isMain": true, "sequence": 1 }],
+      "opening": [ { "id": 1, "day": "Monday", "openingtime": "6:00AM", "closingtime": "5:00PM" }]
+
     },
     {
       "id": 2,
-      "address": "Albert Street",
       "name": "Albert Centre",
-      "phone": "12345"
+      "address": "5 Smith Street",
+      "suburb": "x",
+      "postcode": "x",
+       "state": "x",
+       "country": "x",
+
+      "phone": "1800 000 0555",
+      "lat": 555.2,
+      "long": 555.1,
+      "description": "xxxx",
+      "nqsrating": "xx",
+      "email": "xxx",
+      "offering": [ { "id": 1, "description": "x", "icon:": "x" }],
+      "photos": [ { "id": 1, "fileUrl": "x", "fileType": "x", "isMain": true, "sequence": 1 }],
+      "opening": [ { "id": 1, "day": "Monday", "openingtime": "6:00AM", "closingtime": "5:00PM" }]
     },
     {
       "id": 3,
-      "address": "Sebastian Street",
       "name": "Sebastian Centre",
-      "phone": "2342343"
-    },
-    {
-      "id": 5,
-      "name": "Alex Centre",
-      "address": "Smith Street",
-      "phone": "123456"
-    },
-    {
-      "id": 7,
-      "name": "Green Centre",
-      "address": "Smith Street",
-      "phone": "123456"
-    },
-    {
-      "id": 8,
-      "name": "Smith Centre",
-      "address": "51 Smith Street",
-      "phone": "123456"
+      "address": "5 Smith Street",
+      "suburb": "x",
+      "postcode": "x",
+       "state": "x",
+       "country": "x",
+
+      "phone": "1800 000 0555",
+      "lat": 555.2,
+      "long": 555.1,
+      "description": "xxxx",
+      "nqsrating": "xx",
+      "email": "xxx",
+      "offering": [ { "id": 1, "description": "x", "icon:": "x" }],
+      "photos": [ { "id": 1, "fileUrl": "x", "fileType": "x", "isMain": true, "sequence": 1 }],
+      "opening": [ { "id": 1, "day": "Monday", "openingtime": "6:00AM", "closingtime": "5:00PM" }]
     }
   ],
   "rooms": [

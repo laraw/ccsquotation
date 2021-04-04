@@ -15,8 +15,8 @@ export const navItems: INavData[] = [
     name: 'Your Centres'
   },
   {
-    name: 'Search',
-    url: '/your-centres/centre-search',
+    name: 'Find a Centre',
+    url: '/your-centres/find-a-centre',
     icon: 'cil-find-in-page'
   },
   {
@@ -30,12 +30,12 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Centres',
-    url: '/theme/colors',
-    icon: 'icon-drop'
+    url: '/settings/centre-search',
+    icon: 'cil-find-in-page'
   },
   {
     name: 'Import Sessions',
-    url: '/theme/typography',
+    url: '/settings/centre-search',
     icon: 'icon-pencil'
   }
   // {

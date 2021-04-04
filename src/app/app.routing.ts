@@ -59,6 +59,14 @@ export const routes: Routes = [
         loadChildren: () => import('./views/your-centres/your-centres.module').then(m => m.YourCentresModule)
       },
       {
+        path: 'settings',
+        loadChildren: () => import('./views/settings/settings.module').then(m => m.SettingsModule)
+      },
+      {
+        path: 'crm',
+        loadChildren: () => import('./views/crm/crm.module').then(m => m.CrmModule)
+      },
+      {
         path: 'base',
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
       },
