@@ -40,15 +40,16 @@ export class FindACentreComponent implements OnInit {
     minZoom: 8,
   }
   markers = []
-  selectedCentreName = 'Amazing Centre'
-  selectedCentreDescription = 'No I am not'
+  selectedCentreName = ''
+  selectedCentreDescription = ''
   
 
-  markerOptions: google.maps.MarkerOptions = {draggable: false,  icon: 'assets/img/brand/cottage.png'  };
+  markerOptions: google.maps.MarkerOptions = {draggable: false,  clickable: false, icon: 'assets/img/brand/cottage.png'  };
   markerPositions: google.maps.LatLngLiteral[] = [];
 
-  centremarkerOptions: google.maps.MarkerOptions = {draggable: false,  animation: google.maps.Animation.BOUNCE  };
+  centremarkerOptions: google.maps.MarkerOptions = {draggable: false, clickable: false,  animation: google.maps.Animation.BOUNCE  };
   centreMarkers: google.maps.LatLngLiteral[] = [];
+
 
   /* trying something new */
   selectedCentres:  CentreMarkers[] = [];
@@ -88,7 +89,8 @@ export class FindACentreComponent implements OnInit {
     /* TODO -tidy this up */
 
     this.centreService.getCentres().subscribe(centres => {
-      
+
+      this.centreMarkers = [];
       centres.forEach(function(centre) {
             var distanceBetween = this.getDistanceFromLatLonInKm(lat, lng, centre.lat, centre.long);
   
@@ -100,10 +102,20 @@ export class FindACentreComponent implements OnInit {
             }
       }, this)    
       this.selectedCentres.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
- 
+      console.log(this.selectedCentres);
     });
     
 }
+
+
+  // setCurrentMarker() {
+  //   this.centreMarkers = [];
+  //   this.selectedMarkers.push(selectedCentre.markerPosition);
+  //   this.selectedCentreName = selectedCentre.centre.name;
+  //   this.selectedCentreDescription = selectedCentre.centre.description;
+  
+  // }
+
 
 logCoords(event) {
   console.log(event.latLng.toJSON())
