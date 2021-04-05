@@ -51,6 +51,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 
 
@@ -76,7 +77,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     ReactiveFormsModule,
     CoreModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    GooglePlaceModule
     
   ],
   declarations: [

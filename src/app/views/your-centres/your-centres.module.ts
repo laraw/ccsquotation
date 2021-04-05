@@ -10,6 +10,7 @@ import { CentreQuoteComponent } from './centre-quote.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FindACentreComponent } from './find-a-centre.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 
 
@@ -22,7 +23,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     CommonModule,
     ModalModule.forRoot(),
     GoogleMapsModule,
-    
+    GooglePlaceModule
     
   ],
   declarations: [
