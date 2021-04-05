@@ -56,7 +56,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let centre of centres$ | async">
-                  <td> <a routerLink="/your-centres/detail/{{centre.id}}"> {{ centre.name }} </a> </td>
+                  <td> <a routerLink="/settings/detail/{{centre.id}}"> {{ centre.name }} </a> </td>
                   <td> 
                     {{centre.address}}
                     </td>

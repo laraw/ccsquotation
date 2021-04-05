@@ -5,83 +5,174 @@
                 <div class="card-header">
                     <h2>{{centre.name }} </h2> 
                 </div>
+                  <div class="card-body">
+                    <div class="row centre-details-section">
+                      <div class="col">
+                        <div class="card">
+                          <div class="card-header">
+                            <strong> Details</strong> 
+                          </div>
+                          <div class="card-body">
+                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+              
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-name">Centre name</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="text" id="centre-name" name="centre-name" [(ngModel)]="centre.name" placeholder="Centre name" class="form-control">
+              
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label class="col-md-3 col-form-label" for="centre-address">Centre address</label>
+                                  <div class="col-md-9">
+                                    <input [disabled]="!isEditable" type="text" id="centre-address" name="centre-address"  [(ngModel)]="centre.address" placeholder="Centre address" class="form-control">
+              
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-suburb">Centre suburb</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="text" id="centre-suburb" name="centre-suburb" [(ngModel)]="centre.suburb" placeholder="Centre suburb" class="form-control">
+                                  
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-state">Centre state</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="text" id="centre-state" name="centre-state" [(ngModel)]="centre.state" placeholder="Centre state" class="form-control">
+                                  
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-postcode">Centre postcode</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="text" id="centre-postcode" name="centre-postcode" [(ngModel)]="centre.postcode" placeholder="Centre postcode" class="form-control">
+                                  
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label class="col-md-3 col-form-label" for="centre-country">Centre country</label>
+                                  <div class="col-md-9">
+                                    <input [disabled]="!isEditable" type="text" id="centre-country" name="centre-country" [(ngModel)]="centre.country" placeholder="Centre country" class="form-control">
+                                    
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-phone">Centre phone</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="text" id="centre-phone" name="centre-phone" [(ngModel)]="centre.phone" placeholder="Centre phone" class="form-control">
+                                  
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-phone">Centre lat</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="number" id="centre-lat" name="centre-lat" [(ngModel)]="centre.lat" placeholder="Centre lat" class="form-control">
+                                  
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-long">Centre long</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="text" id="centre-long" name="centre-long" [(ngModel)]="centre.long" placeholder="Centre long" class="form-control">
+                                  
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-description">Centre description</label>
+                                <div class="col-md-9">
+                                  <textarea [disabled]="!isEditable" id="centre-description" name="centre-description" [(ngModel)]="centre.description" placeholder="Centre description" class="form-control">
+                                  </textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="centre-email">Centre email</label>
+                                <div class="col-md-9">
+                                  <input [disabled]="!isEditable" type="email" id="centre-email" name="centre-email" [(ngModel)]="centre.email" placeholder="Centre email" class="form-control">
+                                  
+                                </div>
+                              </div>
+              
+                              <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="select2">Centre NQS</label>
+                                <div class="col-md-9">
+                                  <select [disabled]="!isEditable" id="select2" [(ngModel)]="centre.nqsrating" name="select2" class="form-control">
+              
+                                    <option value="Excellent">Excellent</option>
+                                    <option value="Exceeding NQS">Exceeding NQS</option>
+                                    <option value="Meeting NQS">Meeting NQS</option>
+                                    <option value="Working towards NQS">Working towards NQS</option>
+                                    <option value="Significant Improvement required">Significant Improvement required</option>
+                                  </select>
+                                </div>
+                              </div>
+                          
+                              
+                              <button *ngIf="isEditable" class="float-right btn-success" (click)="save()"><i class="fa fa-save"></i></button>
+                              <button *ngIf="!isEditable" class="float-right btn-primary" (click)="edit()"><i class="fa fa-pencil"></i></button>
+                            </form>
+              
+              
+                          </div>
+              
+                          
+                          </div>   
+              
+                      </div>
+                      <div class="col">
+                          
+                          <div class="card "> 
+                              <div class="card-header">
+                                  <strong>Offerings </strong> 
+                              </div>
+                              <div class="card-body">
+                                
+                                    
+                                    <form class="form-horizontal ng-untouched ng-pristine ng-valid" [formGroup]="form" (ngSubmit)="submitForm()" (load)="load()" novalidate>
+              
+                    
+                                      <div class="form-group row" *ngFor="let offering of centreofferings; let i=index">
+                            
+                                        <div class="col-md-9 col-form-label">
+                                          <div class="form-check">
+                                            <input type="checkbox" value="option1" id="checkbox1" class="form-check-input">
+                                            <input type="checkbox" [disabled]="!offeringsIsEditable" class="form-check-input" [checked]="offering.isSelected"  [value]="offering.offeringId" (change)="onCheckboxChange($event)" />
+                                          
+                                        
+                                            <label for="checkbox1" class="form-check-label">
+                                              {{offering.offering}}
+                                            </label>
+                                          </div>
+                                          
+                                          
+                                        </div>
+                                      </div>
+                                      <button *ngIf="offeringsIsEditable" class="float-right btn-success" type="submit"><i class="fa fa-save"></i></button>
+                                      <button *ngIf="!offeringsIsEditable" class="float-right btn-primary" (click)="editOfferings()"><i class="fa fa-pencil"></i></button>
+              
+                                    </form>
+                                
+                              </div>
+              
+                          </div>
+                        
+                      </div>
+              
+                </div>
+                <div class="row">
+                    <div class="col">
+                      <room-list [centreId]="centre.id"></room-list>
+                  </div>
+                  
+                </div>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-sm btn-danger float-right" (click)="goBack()">Back</button>
+                 </div>
             </div>
         </div>
 
     </div>
-    <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-header">
-              <strong> Details</strong> 
-            </div>
-            <div class="card-body">
-              <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">id:</label>
-                  <div class="col-md-9">
-                    <p class="form-control-static">{{centre.id}}</p>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="centre-name">Centre name</label>
-                  <div class="col-md-9">
-                    <input type="text" id="centre-name" name="centre-name" [(ngModel)]="centre.name" placeholder="Centre name" class="form-control">
-                    <span class="help-block">Enter the name of the Centre</span>
-                  </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="centre-address">Centre address</label>
-                    <div class="col-md-9">
-                      <input type="text" id="centre-address" name="centre-address"  [(ngModel)]="centre.address" placeholder="Centre address" class="form-control">
-                      <span class="help-block">Enter the address of the Centre</span>
-                    </div>
-                 </div>
-                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="centre-phone">Centre phone</label>
-                    <div class="col-md-9">
-                      <input type="text" id="centre-phone" name="centre-phone" [(ngModel)]="centre.phone" placeholder="Centre name" class="form-control">
-                      <span class="help-block">Enter the phone number of the Centre</span>
-                    </div>
-                </div>
-        
-
-            
-                 <button class="btn btn-sm btn-danger" (click)="goBack()">Back</button>
-                 <button class="btn btn-sm btn-success" (click)="save()">Save</button>
-              </form>
-
-
-            </div>
-            <div class="card-footer" *ngIf="success">
-                <strong> <div class="alert alert-success alert-dismissible"> Centre details have been saved successfully. </div></strong> 
-            </div>
-            
-            </div>   
-
-        </div>
-        <div class="col">
-            
-            <div class="card"> 
-                <div class="card-header">
-                    <strong>Offerings </strong> 
-                 </div>
-                 <div class="card-body">
-                    <ul>
-                        <li *ngFor="let room of rooms"> {{ room.roomName }} </li>
-                    </ul>
-                 </div>
-
-            </div>
-             -->
-        </div>
-
-   </div>
-   <div class="row">
-       <div class="col">
-        <room-list [centreId]="centre.id"></room-list>
-     </div>
-    
-   </div>
-
 </div>
+  
+

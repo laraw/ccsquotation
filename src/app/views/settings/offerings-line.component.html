@@ -1,0 +1,19 @@
+
+<td>
+    <!-- <span contenteditable="true"  (blur)="updateList(id, 'offering', $event)" >{{offering.description}}</span> -->
+    <span [class]="contentEditableClass" [contentEditable]="contentEditable" (keyup)="changeValue(id, 'description', $event)" (blur)="updateList(id, 'description', $event)"> {{offering.description}}</span>
+  </td>
+  <td>
+    <span [class]="contentEditableClass" [contentEditable]="contentEditable" (keyup)="changeValue(id, 'icon', $event)" (blur)="updateList(id, 'icon', $event)" >{{offering.icon}}</span>
+  </td>
+
+
+  <td>
+    <span class="table-remove">
+      <button type="button" class="btn-success" *ngIf="contentEditable"  (click)="update(offering.id)"><i class="fa fa-save"></i></button> 
+      <button type="button" class="btn-primary" *ngIf="!contentEditable"  (click)="edit(offering.id)"><i class="fa fa-pencil"></i></button>
+
+      <button type="button" class="btn-danger"  *ngIf="contentEditable"  (click)="remove(offering)"><i class="fa fa-remove"></i></button>
+      <!-- <button type="button" class="btn-sm btn-danger" (click)="remove(id)">Delete</button> -->
+    </span>
+  </td>

@@ -1,6 +1,7 @@
-import { Offering } from './offering.model'
+
 import { CentrePhotos } from './centre-photos.model'
 import { CentreOpening } from './centre-opening.model'
+
 export interface Centre {
   id: number;
   name: string;
@@ -16,7 +17,8 @@ export interface Centre {
   nqsrating: string;
   email: string;
   
-  offering: Offering[];
+  offering: number[];
+
   photos: CentrePhotos[];
   opening: CentreOpening[];
 

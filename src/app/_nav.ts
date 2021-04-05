@@ -24,6 +24,16 @@ export const navItems: INavData[] = [
     url: '/your-centres/centre-quote',
     icon: 'icon-calculator'
   },
+ 
+  {
+    title: true,
+    name: 'CRM'
+  },
+  {
+    name: 'Families',
+    url: '/crm/families',
+    icon: 'cil-find-in-page'
+  },
   {
     title: true,
     name: 'Settings'
@@ -34,10 +44,10 @@ export const navItems: INavData[] = [
     icon: 'cil-find-in-page'
   },
   {
-    name: 'Import Sessions',
-    url: '/settings/centre-search',
+    name: 'Offerings',
+    url: '/settings/offerings',
     icon: 'icon-pencil'
-  }
+  },
   // {
   //   title: true,
   //   name: 'Theme'

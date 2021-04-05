@@ -24,10 +24,10 @@
 
   <td>
     <span class="table-remove">
-      <button type="button" class="btn-success" *ngIf="contentEditable"  (click)="update(room.id)"><i class="fa fa-save"></i>Save</button> 
-      <button type="button" class="btn-primary" *ngIf="!contentEditable"  (click)="edit(room.id)"><i class="fa fa-pencil"></i>Edit</button>
+      <button type="button" class="btn-success" *ngIf="contentEditable"  (click)="update(room.id)"><i class="fa fa-save"></i></button> 
+      <button type="button" class="btn-primary" *ngIf="!contentEditable"  (click)="edit(room.id)"><i class="fa fa-pencil"></i></button>
 
-      <button type="button" class="btn-danger"   (click)="remove(room)"><i class="fa fa-remove"></i>Remove</button>
+      <button type="button" class="btn-danger"  *ngIf="contentEditable"  (click)="remove(room)"><i class="fa fa-remove"></i></button>
       <!-- <button type="button" class="btn-sm btn-danger" (click)="remove(id)">Delete</button> -->
     </span>
   </td>

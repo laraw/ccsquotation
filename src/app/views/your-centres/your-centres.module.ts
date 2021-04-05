@@ -9,6 +9,9 @@ import { CentreQuoteComponent } from './centre-quote.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FindACentreComponent } from './find-a-centre.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
+
 
 @NgModule({
   imports: [
@@ -17,12 +20,15 @@ import { FindACentreComponent } from './find-a-centre.component';
     YourCentresRoutingModule,
     ReactiveFormsModule,
     CommonModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    GoogleMapsModule,
+    
     
   ],
   declarations: [
     CentreQuoteComponent,
     FindACentreComponent,
+    
 
 
 

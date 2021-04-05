@@ -11,3 +11,5 @@ export * from './centre.service';
 export * from './message.service';
 
 export * from './room.service';
+
+export * from './offerings.service';

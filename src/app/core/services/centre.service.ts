@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Centre } from '../models';
+import { Centre, Offering } from '../models';
 import { MessageService } from './message.service';
 
 
@@ -12,6 +12,8 @@ import { MessageService } from './message.service';
 export class CentreService {
 
   private centresUrl = 'http://localhost:3000/centres';  // URL to web api
+  
+  private offeringUrl = 'http://localhost:3000/offerings';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -29,6 +31,15 @@ export class CentreService {
         catchError(this.handleError<Centre[]>('getCentres', []))
       );
   }
+
+    /** GET centres from the server */
+    getOfferings(): Observable<Offering[]> {
+        return this.http.get<Offering[]>(this.offeringUrl)
+          .pipe(
+            tap(_ => this.log('fetched offering')),
+            catchError(this.handleError<Offering[]>('getOffering', []))
+          );
+      }
 
   /** GET centre by id. Return `undefined` when id not found */
   getCentreNo404<Data>(id: number): Observable<Centre> {

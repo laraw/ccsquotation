@@ -13,6 +13,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 
 export class RoomListComponent implements OnInit {
+    @Input() lineChange: boolean;
     @Input() centreId: number;
     roomList: Room[];
     awaitingRoomList: Room[];
@@ -87,7 +88,11 @@ export class RoomListComponent implements OnInit {
 
     }
 
-    
+    refreshList(room: Room) {
+
+        var removeIndex = this.roomList.map(function(room) { return room.id; }).indexOf(37);
+        this.roomList.splice(removeIndex, 1)
+      }
 
     showSuccess() {
         

@@ -11,6 +11,8 @@ import { CentreDetailComponent } from './centre-detail.component';
 import { RoomListComponent } from './room-list.component';
 import { RoomListLineComponent } from './room-list-line.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OfferingListLineComponent } from './offerings-line.component';
+import { OfferingsComponent } from './offerings.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MessagesComponent,
     CentreDetailComponent,
     RoomListComponent,
-    RoomListLineComponent
+    RoomListLineComponent,
+    OfferingListLineComponent,
+    OfferingsComponent
 
   ],
   exports: [

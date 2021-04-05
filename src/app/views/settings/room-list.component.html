@@ -26,7 +26,7 @@
           </tr>
           
          
-            <tr room-list-line *ngFor="let room of roomList; let id = index" [room]="room"></tr>
+            <tr room-list-line *ngFor="let room of roomList; let id = index" [room]="room" (newItemEvent)="refreshList($event)"></tr>
    
         </table>
 

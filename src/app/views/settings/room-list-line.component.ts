@@ -2,6 +2,7 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 import { Room } from '../../core/models';
 import { RoomService } from '../../core/services'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: '[room-list-line]',
@@ -14,11 +15,12 @@ export class RoomListLineComponent implements OnInit {
   contentEditable: boolean;
   editField: string;
   contentEditableClass: string;
-  @Output() lineChange = new EventEmitter<boolean>();
+  @Output() newItemEvent = new EventEmitter<Room>();
 
     constructor(
 
         private roomService: RoomService,
+        private toastr: ToastrService
 
 
         
@@ -40,9 +42,12 @@ export class RoomListLineComponent implements OnInit {
     }
 
     remove(room) {
-        this.roomService.deleteRoom(room.id).subscribe(() => {  });;
+        this.roomService.deleteRoom(room.id).subscribe(() => { this.toastr.success('Room was removed successfully');  });;
+        this.newItemEvent.emit(room);
         
     }
+
+ 
     // remove(id: any) {
     
     // if(id) {
@@ -74,6 +79,6 @@ export class RoomListLineComponent implements OnInit {
         
     }
     updateRoom(room: Room) {
-        this.roomService.updateRoom(room).subscribe();
+        this.roomService.updateRoom(room).subscribe(() => { this.toastr.success('Room was updated successfully')});
     }
 }

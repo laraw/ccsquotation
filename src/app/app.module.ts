@@ -28,6 +28,8 @@ import { RegisterComponent } from './views/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+import { ToastrModule } from 'ngx-toastr';
+
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
@@ -48,11 +50,16 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import { GoogleMapsModule } from '@angular/google-maps';
+
+
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+
+    ToastrModule.forRoot(),
     AppRoutingModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
@@ -68,7 +75,8 @@ import { ChartsModule } from 'ng2-charts';
     FormsModule,
     ReactiveFormsModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
     
   ],
   declarations: [

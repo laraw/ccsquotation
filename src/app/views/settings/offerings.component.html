@@ -1,0 +1,88 @@
+<!-- Editable table -->
+<div class="card">
+    <div class="card-header">
+        <strong> Offerings </strong>
+    </div>
+    <div class="card-body">
+      <div id="table" class="table-editable" >
+        <span class="table-add float-right mb-3 mr-2">
+          <!-- <button class="btn-success btn " (click)="add()">
+            Add
+          </button> -->
+          <button type="button" class="btn btn-success mr-1 " data-toggle="modal" (click)="largeModal.show()">
+            Add
+          </button>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center" >
+          <tr>
+
+            <th class="text-center">Description</th>
+            <th class="text-center">Icon</th>
+            <th class="text-center">Actions</th>
+          </tr>
+          
+         
+            <tr offerings-line *ngFor="let offering of offeringList; let id = index" [offering]="offering"></tr>
+   
+        </table>
+
+      </div>
+
+    </div>
+    
+    
+  </div>
+  
+<div bsModal #largeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">New Offering</h4>
+
+            <button type="button" class="close" (click)="largeModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <form [formGroup]="newOffering" (ngSubmit)="onSubmit()">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        
+
+                            <label>
+                                Description:
+                            
+                            </label>
+                            <input type="text" class="form-control text" formControlName="description">
+
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        
+
+                            <label>
+                                Icon:
+                                
+                            </label>
+                            <input type="text" class="form-control text" formControlName="icon">
+
+                    </div>
+
+                
+                </div>
+        
+        
+       
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="largeModal.hide()">Close</button>
+          <button type="submit" class="btn btn-primary" (click)="largeModal.hide()">Save changes</button>
+        </div>
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- Editable table -->

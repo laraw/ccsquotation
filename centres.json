@@ -1,24 +1,104 @@
 {
+  "offerings": [
+    {
+      "id": 1,
+      "description": "  Nappies",
+      "icon": "cil-child-friends"
+    },
+    {
+      "id": 2,
+      "description": "No charge on public holidays",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 3,
+      "description": "Storypark",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 4,
+      "description": "Age appropriate toys and books",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 5,
+      "description": "Sunscreen",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 6,
+      "description": "Nappies",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 7,
+      "description": "All meals",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 8,
+      "description": "Qualified and dedicated early childhood carers",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 9,
+      "description": "Extra curricular activities",
+      "icon": "cil-child-friendly"
+    },
+    {
+      "id": 10,
+      "description": "Morning pickup",
+      "icon": "morning-pickup"
+    },
+    {
+      "id": 11,
+      "description": "Afternoon pickup",
+      "icon": "afternoon-pickup"
+    }
+  ],
   "centres": [
     {
       "id": 1,
       "name": "Amazing Centre",
       "address": "5 Smith Street",
-      "suburb": "x",
-      "postcode": "x",
-       "state": "x",
-       "country": "x",
-
+      "suburb": "Brisbane",
+      "postcode": "4000",
+      "state": "QLD",
+      "country": "Australia",
       "phone": "1800 000 0555",
-      "lat": 555.2,
-      "long": 555.1,
-      "description": "xxxx",
-      "nqsrating": "xx",
-      "email": "xxx",
-      "offering": [ { "id": 1, "description": "x", "icon:": "x" }],
-      "photos": [ { "id": 1, "fileUrl": "x", "fileType": "x", "isMain": true, "sequence": 1 }],
-      "opening": [ { "id": 1, "day": "Monday", "openingtime": "6:00AM", "closingtime": "5:00PM" }]
-
+      "lat": -27.253,
+      "long": "153.078310",
+      "description": "I am very pretty.",
+      "nqsrating": "Meeting NQS",
+      "email": "amazingcentre@amazing.centre",
+      "offering": [
+        1,
+        2,
+        8,
+        3,
+        4,
+        7,
+        9,
+        6,
+        5
+      ],
+      "photos": [
+        {
+          "id": 1,
+          "fileUrl": "x",
+          "fileType": "x",
+          "isMain": true,
+          "sequence": 1
+        }
+      ],
+      "opening": [
+        {
+          "id": 1,
+          "day": "Monday",
+          "openingtime": "6:00AM",
+          "closingtime": "5:00PM"
+        }
+      ]
     },
     {
       "id": 2,
@@ -26,18 +106,38 @@
       "address": "5 Smith Street",
       "suburb": "x",
       "postcode": "x",
-       "state": "x",
-       "country": "x",
-
+      "state": "x",
+      "country": "x",
       "phone": "1800 000 0555",
       "lat": 555.2,
       "long": 555.1,
       "description": "xxxx",
       "nqsrating": "xx",
       "email": "xxx",
-      "offering": [ { "id": 1, "description": "x", "icon:": "x" }],
-      "photos": [ { "id": 1, "fileUrl": "x", "fileType": "x", "isMain": true, "sequence": 1 }],
-      "opening": [ { "id": 1, "day": "Monday", "openingtime": "6:00AM", "closingtime": "5:00PM" }]
+      "offering": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "photos": [
+        {
+          "id": 1,
+          "fileUrl": "x",
+          "fileType": "x",
+          "isMain": true,
+          "sequence": 1
+        }
+      ],
+      "opening": [
+        {
+          "id": 1,
+          "day": "Monday",
+          "openingtime": "6:00AM",
+          "closingtime": "5:00PM"
+        }
+      ]
     },
     {
       "id": 3,
@@ -45,18 +145,38 @@
       "address": "5 Smith Street",
       "suburb": "x",
       "postcode": "x",
-       "state": "x",
-       "country": "x",
-
+      "state": "x",
+      "country": "x",
       "phone": "1800 000 0555",
       "lat": 555.2,
       "long": 555.1,
       "description": "xxxx",
       "nqsrating": "xx",
       "email": "xxx",
-      "offering": [ { "id": 1, "description": "x", "icon:": "x" }],
-      "photos": [ { "id": 1, "fileUrl": "x", "fileType": "x", "isMain": true, "sequence": 1 }],
-      "opening": [ { "id": 1, "day": "Monday", "openingtime": "6:00AM", "closingtime": "5:00PM" }]
+      "offering": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "photos": [
+        {
+          "id": 1,
+          "fileUrl": "x",
+          "fileType": "x",
+          "isMain": true,
+          "sequence": 1
+        }
+      ],
+      "opening": [
+        {
+          "id": 1,
+          "day": "Monday",
+          "openingtime": "6:00AM",
+          "closingtime": "5:00PM"
+        }
+      ]
     }
   ],
   "rooms": [
@@ -74,7 +194,7 @@
       "staffRatio": "4",
       "capacity": "4",
       "dailyRate": "95.00",
-      "name": "Nursery"
+      "name": " Nursery"
     },
     {
       "id": 6,
@@ -148,30 +268,6 @@
       "dailyRate": "1"
     },
     {
-      "id": 13,
-      "centreId": 1,
-      "roomName": "Kindergarten B",
-      "minAge": "35",
-      "maxAge": "45",
-      "childRatio": "1",
-      "staffRatio": "5",
-      "dailyRate": "111",
-      "capacity": "5",
-      "name": "Toddlers"
-    },
-    {
-      "id": 14,
-      "centreId": 1,
-      "name": "Pre-Kindy",
-      "minAge": "25",
-      "maxAge": "35",
-      "childRatio": "1",
-      "staffRatio": "5",
-      "capacity": "5",
-      "dailyRate": "77",
-      "roomName": "Pre-Kindy"
-    },
-    {
       "id": 15,
       "name": "X",
       "minAge": "X",
@@ -183,24 +279,46 @@
     },
     {
       "id": 16,
-      "name": "X",
-      "minAge": "X",
-      "maxAge": "X",
-      "childRatio": "X",
-      "staffRatio": "X",
-      "capacity": "X",
-      "dailyRate": "X",
+      "name": " Toddlers A",
+      "minAge": "25",
+      "maxAge": "35",
+      "childRatio": "1",
+      "staffRatio": "5",
+      "capacity": "5",
+      "dailyRate": "99.00",
       "centreId": 1
     },
     {
       "id": 17,
-      "name": "Pre-Kindy B",
-      "minAge": "1",
-      "maxAge": "4",
+      "name": "Toddlers B",
+      "minAge": "25",
+      "maxAge": "35",
       "childRatio": "1",
       "staffRatio": "5",
       "capacity": "5",
-      "dailyRate": "55",
+      "dailyRate": "99.00",
+      "centreId": 1
+    },
+    {
+      "id": 18,
+      "name": "Pre-Kindergarten A",
+      "minAge": "35",
+      "maxAge": "72",
+      "childRatio": "1",
+      "staffRatio": "6",
+      "capacity": "6",
+      "dailyRate": "99.00",
+      "centreId": 1
+    },
+    {
+      "id": 19,
+      "name": "Pre-Kindergarten B",
+      "minAge": "35",
+      "maxAge": "72",
+      "childRatio": "1",
+      "staffRatio": "6",
+      "capacity": "6",
+      "dailyRate": "99.00",
       "centreId": 1
     }
   ]
