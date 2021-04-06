@@ -1,6 +1,7 @@
 
 import { CentrePhotos } from './centre-photos.model'
 import { CentreOpening } from './centre-opening.model'
+import { Offering } from './offering.model'
 
 export interface Centre {
   id: number;

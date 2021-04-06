@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Centre, Room, Offering } from '../../core/models';
-import { CentreService, RoomService } from '../../core/services';
+import { CentreService, OfferingService, RoomService } from '../../core/services';
 
 import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -16,8 +16,9 @@ import { ToastrService } from 'ngx-toastr';
 export class CentreViewComponent implements OnInit {
   @Input() centre: Centre;
   @Input() isSelected: boolean;
-  
-
+  offerings: Offering[] = [];
+  centreofferings: any[] = [];
+  offeringConfig: Offering[];
 //   success: boolean;
 //   dismissible = true;
 //   alertsDismiss: any = [];
@@ -35,6 +36,8 @@ export class CentreViewComponent implements OnInit {
     private centreService: CentreService,
     private roomService: RoomService,
     private location: Location,
+    private offeringService: OfferingService
+
   
     
   ) {
@@ -42,8 +45,33 @@ export class CentreViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+     
+    /* TODO - this is fkn terrible, i will need to implement a real API call which returns offering description and icon when calling centre data */
+
+    this.offeringService.getOfferings().subscribe(offerings => { 
+      this.offeringConfig = offerings;  
       
-    // const id = +this.route.snapshot.paramMap.get('id');
+      this.centre.offering.forEach(function(centreoffering) {
+        console.log(this.offeringConfig.find(item => item.id === centreoffering));
+        if(this.offeringConfig.find(item => item.id === centreoffering)) {
+              this.centreofferings.push(this.offeringConfig.find(item => item.id === centreoffering));
+        }
+      }, this)
+
+    
+    } );
+      
+  
+
+    // this.centre.offering.forEach(function(offering) {
+    //   var result = offeringConfig.find(obj => {
+    //     return obj.id === offering;
+    //   })
+    //   console.log(result);
+
+    // })
+    // // const id = +this.route.snapshot.paramMap.get('id');
 
     // this.centreService.getCentre(id)
     //   .subscribe(
@@ -63,6 +91,8 @@ export class CentreViewComponent implements OnInit {
 
   getCentre(): void {
     const id = +this.route.snapshot.paramMap.get('id');
+
+
 
     this.centreService.getCentre(id)
       .subscribe(

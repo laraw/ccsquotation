@@ -125,10 +125,10 @@
       "id": 2,
       "name": "Albert Centre",
       "address": "5 Smith Street",
-      "suburb": "x",
-      "postcode": "x",
-      "state": "x",
-      "country": "x",
+      "suburb": "Carina",
+      "postcode": "4019",
+      "state": "QLD",
+      "country": "Australia",
       "phone": "1800 000 0555",
       "lat": -27.233187156915747,
       "long": 153.10126797,
@@ -137,10 +137,12 @@
       "email": "xxx",
       "offering": [
         1,
+        4,
         2,
         3,
-        4,
-        5
+        5,
+        6,
+        8
       ],
       "photos": [
         {
@@ -278,7 +280,7 @@
       "minAge": "0",
       "maxAge": "12",
       "childRatio": "1",
-      "staffRatio": "4",
+      "staffRatio": "5",
       "capacity": "4",
       "dailyRate": "95.00",
       "name": "Kindergarten A"
@@ -387,6 +389,17 @@
       "capacity": "6",
       "dailyRate": "99.00",
       "centreId": 1
+    },
+    {
+      "id": 20,
+      "name": "Toddlers",
+      "minAge": "1",
+      "maxAge": "5",
+      "childRatio": "1",
+      "staffRatio": "5",
+      "capacity": "5",
+      "dailyRate": "95",
+      "centreId": 2
     }
   ]
 }

@@ -9,6 +9,9 @@ import { CommonModule } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FamiliesComponent } from './families.component';
 import { CrmRoutingModule } from './crm-routing.module'
+import { EnquiriesComponent } from './enquiries.component';
+import { LeadsComponent } from './leads.component';
+import { ToursComponent } from './tours.component';
 
 @NgModule({
   imports: [
@@ -23,7 +26,10 @@ import { CrmRoutingModule } from './crm-routing.module'
   declarations: [
 
 
-    FamiliesComponent
+    FamiliesComponent,
+    EnquiriesComponent,
+    LeadsComponent,
+    ToursComponent
 
   ],
   exports: [

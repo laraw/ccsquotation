@@ -19,7 +19,28 @@ const routes: Routes = [
             data: {
               title: 'Families'
             }
+          },
+          {
+            path: 'enquiries',
+            component: FamiliesComponent,
+            data: {
+              title: 'Enquiries'
+            }
           },         
+          {
+            path: 'leads',
+            component: FamiliesComponent,
+            data: {
+              title: 'Leads'
+            }
+          },         
+          {
+            path: 'tours',
+            component: FamiliesComponent,
+            data: {
+              title: 'Tours'
+            }
+          },                  
       
           
     ]

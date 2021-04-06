@@ -30,6 +30,21 @@ export const navItems: INavData[] = [
     name: 'CRM'
   },
   {
+    name: 'Enquiries',
+    url: '/crm/enquiries',
+    icon: 'cil-find-in-page'
+  },
+  {
+    name: 'Tours',
+    url: '/crm/tours',
+    icon: 'cil-find-in-page'
+  },
+  {
+    name: 'Leads',
+    url: '/crm/leads',
+    icon: 'cil-find-in-page'
+  },
+  {
     name: 'Families',
     url: '/crm/families',
     icon: 'cil-find-in-page'
