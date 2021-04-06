@@ -20,8 +20,9 @@ import { Address } from 'ngx-google-places-autocomplete/objects/address';
   styleUrls: ['./find-a-centre.component.css']
 })
 export class FindACentreComponent implements OnInit {
-  centres$: Observable<Centre[]>;
+  // centres$: Observable<Centre[]>;
   private searchTerms = new Subject<string>();
+
 
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
 
@@ -40,8 +41,8 @@ export class FindACentreComponent implements OnInit {
     minZoom: 8,
   }
   markers = []
-  selectedCentreName = ''
-  selectedCentreDescription = ''
+  selectedCentre = <Centre>{};
+  isSelected = false;
   
 
   markerOptions: google.maps.MarkerOptions = {draggable: false,  clickable: false, icon: 'assets/img/brand/cottage.png'  };
@@ -53,25 +54,12 @@ export class FindACentreComponent implements OnInit {
 
   /* trying something new */
   selectedCentres:  CentreMarkers[] = [];
-  // centreViewed= <Centre>{};
 
   @ViewChild("placesRef") placesRef : GooglePlaceDirective;
 
   constructor(private centreService: CentreService, private geocoder: MapGeocoder ) {
 
     
-  }
-
-  // Push a search term into the observable stream.
-  search(term: string): void {
-    // this.searchTerms.next(term);
-    // this.geocoder.geocode({
-    //     address: term,
-    //     region: 'au'
-    //   }).subscribe(({results}) => {
-    //     console.log(results[0].geometry.location.lat());
-    //     console.log(results[0].geometry.location.lng());
-    //   });
   }
 
 
@@ -84,37 +72,35 @@ export class FindACentreComponent implements OnInit {
       lat: lat,
       lng: lng
     }
+    this.centreMarkers = [];
+    this.selectedCentres = [];
+
     this.addHomeMarker(address.geometry.location.toJSON());
 
     /* TODO -tidy this up */
 
     this.centreService.getCentres().subscribe(centres => {
 
-      this.centreMarkers = [];
+      
       centres.forEach(function(centre) {
             var distanceBetween = this.getDistanceFromLatLonInKm(lat, lng, centre.lat, centre.long);
-  
+
             if(distanceBetween < 25) {
               
               this.selectedCentres.push({ markerPosition: {  lat: lat, lng: lng } , centre: centre, distance: distanceBetween });
-              this.addCentreMarker(centre.lat, centre.long);
+              
               
             }
       }, this)    
       this.selectedCentres.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
-      console.log(this.selectedCentres);
+      this.selectedCentre =  this.selectedCentres[0].centre;
+
+      this.addCentreMarker(this.selectedCentre.lat,this.selectedCentre.long);
+      this.isSelected = true;
+
     });
     
 }
-
-
-  // setCurrentMarker() {
-  //   this.centreMarkers = [];
-  //   this.selectedMarkers.push(selectedCentre.markerPosition);
-  //   this.selectedCentreName = selectedCentre.centre.name;
-  //   this.selectedCentreDescription = selectedCentre.centre.description;
-  
-  // }
 
 
 logCoords(event) {
@@ -134,24 +120,6 @@ logCoords(event) {
     this.markerPositions.push(latlng);
    
 
-    // navigator.geolocation.getCurrentPosition((position) => {
-    
-    // })
-    // this.markers.push({
-    //   position: {
-    //     // lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-    //     // lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
-    //     lat: lat,
-    //     lng: lng
-    //   },
-    //   label: {
-    //     color: colour,
-    //     text: 'Marker label ' + (this.markers.length + 1),
-    //   },
-    //   title: 'Marker title ' + (this.markers.length + 1),
-    //   options: { animation: google.maps.Animation.BOUNCE },
-    // })
-    // this.markers = this.markers;
   }
 
 
@@ -159,17 +127,16 @@ logCoords(event) {
     const lat = marker.marker.getPosition().lat();
     const lng = marker.marker.getPosition().lng();
 
-    // this.selectedCentres.forEach( function (centre) {
-    //   console.log(this.getDistanceFromLatLonInKm(lat, lng, centre.markerPosition.lat, centre.markerPosition.lng));
-    //   if(lat == centre.markerPosition.lat && lng == centre.markerPosition.lng) {
-    //       this.centreViewed = centre.centre;
-    //   }
-    // }, this)
 
     
     this.infoWindow.open(marker);
   }
 
+  setSelectedCentre(centre: Centre) {
+    this.selectedCentre = centre;
+    this.centreMarkers = [];
+    this.addCentreMarker(this.selectedCentre.lat,this.selectedCentre.long);
+  }
 
   ngOnInit(): void {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -179,18 +146,6 @@ logCoords(event) {
         }
       })
 
-
-      
-    // this.centres$ = this.searchTerms.pipe(
-    //   // wait 300ms after each keystroke before considering the term
-    //   debounceTime(300),
-
-    //   // ignore new term if same as previous term
-    //   distinctUntilChanged(),
-
-    //   // switch to new search observable each time the term changes
-    //   switchMap((term: string) => this.centreService.searchCentres(term)),
-    // );
   }
   
   getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {

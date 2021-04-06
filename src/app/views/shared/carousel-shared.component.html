@@ -1,0 +1,11 @@
+<carousel [interval]="myInterval" [noWrap]="noWrapSlides" [(activeSlide)]="activeSlideIndex">
+  <slide *ngFor="let slide of slides; let index=index">
+    <img [src]="slide.fileUrl" alt="image slide" >
+
+    <div class="carousel-caption">
+      &nbsp;
+      
+    </div>
+  </slide>
+</carousel>
+<br/>

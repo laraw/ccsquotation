@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FindACentreComponent } from './find-a-centre.component';
 import { CentreQuoteComponent } from './centre-quote.component';
+import { CentreViewComponent } from './centre-view.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,13 @@ const routes: Routes = [
             component: CentreQuoteComponent,
             data: {
               title: 'centre-quote'
+            }
+          },
+          {
+            path: 'centre-view/:id',
+            component: CentreViewComponent,
+            data: {
+              title: 'View'
             }
           },
  

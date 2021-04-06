@@ -85,8 +85,29 @@
       "photos": [
         {
           "id": 1,
-          "fileUrl": "x",
-          "fileType": "x",
+          "fileUrl": "assets/img/centres/image1.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 2,
+          "fileUrl": "assets/img/centres/image2.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 3,
+          "fileUrl": "assets/img/centres/image3.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 4,
+          "fileUrl": "assets/img/centres/image4.jpg",
+          "fileType": "jpg",
           "isMain": true,
           "sequence": 1
         }
@@ -124,8 +145,29 @@
       "photos": [
         {
           "id": 1,
-          "fileUrl": "x",
-          "fileType": "x",
+          "fileUrl": "assets/img/centres/image1.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 2,
+          "fileUrl": "assets/img/centres/image2.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 3,
+          "fileUrl": "assets/img/centres/image3.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 4,
+          "fileUrl": "assets/img/centres/image4.jpg",
+          "fileType": "jpg",
           "isMain": true,
           "sequence": 1
         }
@@ -163,8 +205,29 @@
       "photos": [
         {
           "id": 1,
-          "fileUrl": "x",
-          "fileType": "x",
+          "fileUrl": "assets/img/centres/image1.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 2,
+          "fileUrl": "assets/img/centres/image2.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 3,
+          "fileUrl": "assets/img/centres/image3.jpg",
+          "fileType": "jpg",
+          "isMain": true,
+          "sequence": 1
+        },
+        {
+          "id": 4,
+          "fileUrl": "assets/img/centres/image4.jpg",
+          "fileType": "jpg",
           "isMain": true,
           "sequence": 1
         }
@@ -205,7 +268,8 @@
       "childRatio": "1",
       "staffRatio": "4",
       "capacity": "4",
-      "dailyRate": "95.00"
+      "dailyRate": "95.00",
+      "name": "Nursery"
     },
     {
       "id": 7,
@@ -216,7 +280,8 @@
       "childRatio": "1",
       "staffRatio": "4",
       "capacity": "4",
-      "dailyRate": "95.00"
+      "dailyRate": "95.00",
+      "name": "Kindergarten A"
     },
     {
       "id": 8,
@@ -227,7 +292,8 @@
       "childRatio": "1",
       "staffRatio": "4",
       "capacity": "4",
-      "dailyRate": "95.00"
+      "dailyRate": "95.00",
+      "name": "Kindergarten B"
     },
     {
       "id": 9,
@@ -238,7 +304,8 @@
       "childRatio": "1",
       "staffRatio": "4",
       "capacity": "4",
-      "dailyRate": "95.00"
+      "dailyRate": "95.00",
+      "name": "Pre-kindergarten"
     },
     {
       "id": 10,

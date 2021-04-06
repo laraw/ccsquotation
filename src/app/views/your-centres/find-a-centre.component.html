@@ -1,129 +1,111 @@
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <!-- <div class="clearfix">
-            <h1 class="float-left display-3 mr-4">404</h1>
-            <h4 class="pt-3">Oops! You're lost.</h4>
 
-        </div> -->
-        <div class="input-prepend input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-
-            </div>
-            <input input size="16" ngx-google-places-autocomplete [options]="{types: [],componentRestrictions: { country: 'AU' }
-                }" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" class="form-control" placeholder="Start searching by address, postcode or suburb" />
-
-             <!-- <input size="16" type="text" #searchBox id="search-box" (input)="search(searchBox.value)" class="form-control" placeholder="Start searching by address, postcode or suburb">  -->
-                    <!-- <button (click)="search()"type="button" class="btn btn-info">
-                    </button> -->
-                    <!-- <i class="fa fa-search"></i>&nbsp; Search -->
-
-        </div>
-    </div>
-</div>
-<div class="row">
-    &nbsp;
-</div>
 <div class="row">
     <div class="col">
-        <google-map height="500px"
-        width="100%"
-        [center]="center"
-        [zoom]="zoom"
-        (mapClick)="logCoords($event)" >
-        <map-marker #marker="mapMarker"
-            *ngFor="let markerPosition of markerPositions"
-            [position]="markerPosition" [options]="markerOptions"
-                    ></map-marker>
-   <map-marker #marker="mapMarker"
-                    *ngFor="let centreMarker of centreMarkers"
-                    [position]="centreMarker" [options]="centremarkerOptions"
-                           ></map-marker>
-   <!-- <map-marker #marker="mapMarker"
-                    *ngFor="let selectedMarker of selectedMarkers"
-                    [position]="selectedMarker" [options]="selectedmarkerOptions"
-                            (mapClick)="openInfoWindow(selectedMarker)"></map-marker>
-
-
-         <map-info-window>
-             <div id="iw-container">
-                <div class="iw-title">  </div>
-                <div class="iw-content">
-                  <div class="iw-subTitle">{{ selectedCentreName }}</div>
-                   <img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Amazing Centre main" height="50" width="50"> -->
-                   <!-- <p> {{ selectedCentreDescription }} </p> --> -->
-                   <!-- <div class="iw-subTitle">Contacts</div>'
-                  <p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>
-                  <br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p> -->
-                 <!-- </div>
-                <div class="iw-bottom-gradient"></div> -->
-              <!-- </div>
-              </div>
-         </map-info-window>  --> 
-        </google-map>
-
-
-
-</div>
-    <!-- <div class="col">
-        &nbsp;
-    </div> -->
-</div>
-<div class="row">
-    &nbsp;
-</div>
-<div class="row">
-    <div class="col-lg-12">
         <div class="card">
-          <div class="card-header">
-            <i class="fa fa-align-justify"></i> Results
-          </div>
-          <div class="card-body">
-            <table class="table table-bordered table-striped table-sm">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Address</th>
-                  <th>Suburb</th>
-                  <th>State</th>
-                  <th>Postcode</th>
+            <div class="card-header">
+                Find a Centre 
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <!-- <div class="clearfix">
+                            <h1 class="float-left display-3 mr-4">404</h1>
+                            <h4 class="pt-3">Oops! You're lost.</h4>
+                
+                        </div> -->
+                        <div class="input-prepend input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-search"></i></span>
+                
+                            </div>
+                            <input input size="16" ngx-google-places-autocomplete [options]="{types: [],componentRestrictions: { country: 'AU' }
+                                }" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" class="form-control" placeholder="Start searching by address, postcode or suburb" />
+        
+                
+                        </div>
 
-                  <th>Email</th>
-                  <th>Actions</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let centre of selectedCentres">
-                  <td>{{centre.centre.name}}</td>
-                  <td>{{ centre.centre.description }} </td>
-                  <td> {{ centre.centre.address }}  </td>
-                  <td>{{centre.centre.suburb}}</td>
-                  <td>{{ centre.centre.state }} </td>
-                  <td> {{ centre.centre.postcode }} </td>
-                  <td> {{ centre.centre.email }} </td>
-                  <td > <a (click)="setCurrentMarker(centre.markerPosition)"> Locate on map </a> </td>
-                  <td>
-                    <span class="badge badge-success">Vacancies</span>
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
-            <nav>
-              <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </nav>
-          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    &nbsp;
+                </div>
+                <google-map 
+                width="100%"
+                [center]="center"
+                [zoom]="zoom"
+                (mapClick)="logCoords($event)" >
+                <map-marker #marker="mapMarker"
+                    *ngFor="let markerPosition of markerPositions"
+                    [position]="markerPosition" [options]="markerOptions"
+                            ></map-marker>
+           <map-marker #marker="mapMarker"
+                            *ngFor="let centreMarker of centreMarkers"
+                            [position]="centreMarker" [options]="centremarkerOptions"
+                                   ></map-marker>
+        
+                </google-map>
+            </div>
         </div>
-      </div>
+    </div>
+
+    <div class="col" *ngIf="isSelected">
+     
+            <app-centre-view [centre]="selectedCentre"> </app-centre-view>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            All results
+                        </div>
+                        <div class="card-body">
+                        <table class="table table-bordered table-striped table-sm">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                    
+                                <th>Address</th>
+                    
+                                <th>Email</th>
+                                <th>Distance from location</th>
+                                <th>Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let centre of selectedCentres">
+                                <td> <a href="javascript:void(0);" (click)="setSelectedCentre(centre.centre)"> {{ centre.centre.name }} </a> </td>
+                              
+                                <td> {{ centre.centre.address }}  {{ centre.centre.suburb }}  {{ centre.centre.state }}  {{ centre.centre.postcode }}  </td>
+                    
+                                <td> {{ centre.centre.email }} </td>
+                                <td> {{ centre.distance | number: '1.0-0' }} km </td>
+                                <td>
+                                  <span class="badge badge-success">Vacancies</span>
+                                </td>
+                              </tr>
+                    
+                            </tbody>    
+                          </table>
+                          <nav>
+                            <ul class="pagination">
+                              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item"><a class="page-link" href="#">4</a></li>
+                              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                          </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        
+    </div>
+    <div class="col" *ngIf="!isSelected">
+        &nbsp;
+    </div>
+   
 </div>

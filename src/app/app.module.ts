@@ -78,7 +78,9 @@ import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
     CoreModule,
     HttpClientModule,
     GoogleMapsModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    
+    
     
   ],
   declarations: [

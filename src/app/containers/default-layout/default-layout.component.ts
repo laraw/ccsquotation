@@ -9,6 +9,10 @@ export class DefaultLayoutComponent {
   public sidebarMinimized = false;
   public navItems = navItems;
 
+  showPageInConsole() {
+    console.log(this);
+  }
+
   toggleMinimize(e) {
     this.sidebarMinimized = e;
   }
