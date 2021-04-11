@@ -13,3 +13,9 @@ export * from './message.service';
 export * from './room.service';
 
 export * from './offerings.service';
+
+export * from './contact.service';
+
+export * from './child.service';
+
+export * from './enquiry.service';

@@ -6,29 +6,32 @@ import { CentreService, OfferingService, RoomService } from '../../core/services
 
 import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { pulseAnimation, bounceAnimation, bounceInRightAnimation } from 'angular-animations';
+import { EventEmitter } from '@angular/core'
 
 
 @Component({
   selector: 'app-centre-view',
-  templateUrl: './centre-view.component.html'
+  templateUrl: './centre-view.component.html',
+  animations: [ pulseAnimation({ anchor: 'pulse' }), bounceInRightAnimation() ]
 
 })
 export class CentreViewComponent implements OnInit {
   @Input() centre: Centre;
   @Input() isSelected: boolean;
+  @Input() private centreChanged: EventEmitter<boolean>;
+
   offerings: Offering[] = [];
   centreofferings: any[] = [];
   offeringConfig: Offering[];
-//   success: boolean;
-//   dismissible = true;
-//   alertsDismiss: any = [];
   rooms: Room[];
-//   // private searchTerms = new Subject<string>();
-//   isEditable: boolean;
-//   offeringsIsEditable: boolean;
-//   centreofferings: CentreOffering[] = [];
-//   form: FormGroup;
 
+    /* Animations */
+
+    animation = 'bounceInRight';
+    animationState = false;
+    animationWithState = false;
+    hueBtnState = false;
   
 
   constructor(
@@ -46,6 +49,12 @@ export class CentreViewComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+    if (this.centreChanged) {
+      this.centreChanged.subscribe(data => {
+        this.animate();
+      }, this);
+    }
      
     /* TODO - this is fkn terrible, i will need to implement a real API call which returns offering description and icon when calling centre data */
 
@@ -111,45 +120,6 @@ export class CentreViewComponent implements OnInit {
   }
 
   
-//   getOfferings(centreOfferings:number[]): void {
-
-
-//     this.centreService.getOfferings()
-//       .subscribe(
-//         result => {
-         
-//           var offeringsInternal: CentreOffering[] = []; 
-//           // this.getRooms();
-//           result.forEach(function(item) {
-            
-//             if(centreOfferings.includes(item.id)) {
-              
-//               offeringsInternal.push( {
-//                 offering: item.description,
-//                 isSelected: true,
-//                 offeringId: item.id
-
-//               });
-//             }
-//             else {
-              
-//               offeringsInternal.push( {
-//                 offering: item.description,
-//                 isSelected: false,
-//                 offeringId: item.id
-
-//               });
-//             }
-//           })
-//            this.centreofferings = offeringsInternal.sort((a, b) => (a.offering > b.offering) ? 1 : -1);
-
-          
-//         }
-        
-//         );
-    
-    
-//   }
 
 
   getRooms(): void {
@@ -160,6 +130,15 @@ export class CentreViewComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  
+  animate() {
+    this.animationState = false;
+    setTimeout(() => {
+      this.animationState = true;
+      this.animationWithState = !this.animationWithState;
+    }, 1);
   }
 
 

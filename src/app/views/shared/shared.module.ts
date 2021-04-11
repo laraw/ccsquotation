@@ -11,6 +11,7 @@ import { CarouselSharedComponent } from './carousel-shared.component';
 
 // Carousel Component
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NaviComponent } from './navi.component';
 
 @NgModule({
   imports: [
@@ -24,11 +25,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
   ],
   declarations: [
 
-    CarouselSharedComponent
+    CarouselSharedComponent,
+    NaviComponent
 
   ],
   exports: [
-    CarouselSharedComponent
+    CarouselSharedComponent,
+    NaviComponent
 
   ]
 })

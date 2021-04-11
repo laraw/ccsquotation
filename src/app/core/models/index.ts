@@ -14,3 +14,8 @@ export * from './centre-opening.model';
 
 export * from './centre-photos.model';
 
+export * from './child.model';
+
+export * from './contact.model';
+
+export * from './enquiry.model';

@@ -15,6 +15,8 @@ import { CentreViewComponent } from './centre-view.component';
 import { SharedModule } from '../shared/shared.module';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
+import { CrmModule } from '../crm/crm.module';
+
 
 
 
@@ -29,7 +31,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     GoogleMapsModule,
     GooglePlaceModule,
     SharedModule,
-    TabsModule
+    TabsModule,
+    CrmModule
   ],
   declarations: [
     CentreQuoteComponent,

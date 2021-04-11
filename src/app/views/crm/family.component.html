@@ -1,0 +1,182 @@
+<div class="animated fadeIn" *ngIf="contact">
+    <div class="row">
+        <div class="col">
+            <div class="card card-fixed-height  shadow">
+                <div class="card-header">
+                   
+                   <div class="card-title">
+                    <span data-initials="" class="{{contactinitials}}">  </span> <strong> {{ contact.firstName }} {{ contact.lastName }} </strong>
+                   </div> 
+                   <div class="row">
+                       <div class="col">
+                            <strong>Email</strong>
+                       </div>
+                       <div class="col">
+                           <span class="float-right"> <a href="mailto:{{ contact.email }}"> {{ contact.email }} </a> </span>
+
+                       </div>
+                   </div>  
+                   <div class="row">
+                        <div class="col">
+                            <strong>Phone</strong>
+                        </div>
+                        <div class="col">
+                            <span class="float-right"> {{ contact.phone }} </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <app-navi [nav]="leftNav"></app-navi>
+                        
+                </div>
+            </div>
+            
+           
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="col-8">
+            
+             <div class="card shadow">
+                <div class="card-header">
+                    <div class="card-title"> Enquiries </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-sm" >
+                        <thead>
+                          <tr>
+                            <th>Date Started</th>
+                            <th>Preferred Start Date</th>
+                            <th>Centre Name</th>
+                            <th>Children</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td> 13-Mar-2021 </td>
+                            <td> 
+                              13-Mar-2021
+                              </td>
+                            <td> Other Centre  </td>
+                            <td> Child name </td>
+                            <td>
+                              <span class="badge badge-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> 13-Mar-2021 </td>
+                            <td> 
+                              13-Mar-2021
+                              </td>
+                            <td> Amazing Centre  </td>
+                            <td> Child name </td>
+                            <td>
+                              <span class="badge badge-danger">Cancelled</span>
+                            </td>
+                          </tr>
+                     
+                        </tbody>
+                      </table>
+                     
+                </div>
+            </div>
+            <div class="card shadow">
+                <div class="card-header">
+                    <div class="card-title"> Children </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-sm" >
+                        <thead>
+                          <tr>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>DOB</th>
+                            <th>CRN</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td> XX </td>
+                            <td> 
+                              XX
+                              </td>
+                            <td> XX  </td>
+                            <td> XX </td>
+                            <td>
+                              <span class="badge badge-success">Enrolled</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> XX </td>
+                            <td> 
+                              XX
+                              </td>
+                            <td> XX  </td>
+                            <td> XX </td>
+                            <td>
+                              <span class="badge badge-danger">Cancelled</span>
+                            </td>
+                          </tr>
+                     
+                        </tbody>
+                      </table>
+                     
+                </div>
+            </div>
+        </div> 
+     
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card ">
+                <div class="card-header"> 
+                <div class="card-title"> <i class="fa fa-search"></i> Nearby centres </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-sm" >
+                        <thead>
+                          <tr>
+                            <th>Centre name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let centre of selectedCentres">
+                            <td> {{ centre.name }} </td>
+                            <td> 
+                              {{ centre.email }}
+                              </td>
+                            <td> {{ centre.address }}  </td>
+                            <td> {{ centre.phone }} </td>
+                            <td> Enquire </td>
+                            <td>
+                              <span class="badge badge-success">Enrolled</span>
+                            </td>
+                          </tr>
+            
+                     
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</div>

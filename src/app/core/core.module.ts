@@ -10,7 +10,10 @@ import {
   UserService,
   MessageService,
   CentreService,
-  RoomService
+  RoomService,
+  ContactService,
+  ChildService,
+  EnquiryService
 } from './services';
 
 @NgModule({
@@ -31,7 +34,13 @@ import {
 
     CentreService,
 
-    RoomService
+    RoomService,
+
+    ContactService,
+
+    ChildService,
+
+    EnquiryService
   ],
   declarations: []
 })

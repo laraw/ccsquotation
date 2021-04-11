@@ -1,0 +1,15 @@
+<div class="navi">
+    <div class="navi-item" *ngFor="let item of nav">
+
+    
+        <a href="{{item.url}}" class="navi-link" [class.active]="item.attributes.active" >
+            <span class="navi-icon">
+                
+                <span class="svg-icon"><i [ngClass]="item.icon"></i></span>
+                
+            </span>
+            <span class="navi-text">{{ item.name }} </span>
+        </a>
+    </div>
+
+</div>

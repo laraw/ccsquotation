@@ -2,12 +2,12 @@
 <div class="animated fadeIn" >
     <div class="row">
         <div class="col">
-            <div class="card">
-                <div class="card-header">  {{ centre.name | uppercase }}  </div>
+            <div class="card shadow"  [@bounceInRight]="animationState">
+                <div class="card-header">  <div class="card-title"> {{ centre.name | uppercase }}  </div> </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <p>Enquire now </p> 
+                            <app-new-enquiry [centreId]="centre.id"></app-new-enquiry>
                         </div>
                     </div>
                     <div class="row">

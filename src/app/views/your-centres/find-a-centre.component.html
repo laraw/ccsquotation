@@ -1,9 +1,9 @@
-
+<div class="animated fadeIn"> 
 <div class="row">
     <div class="col">
-        <div class="card">
+        <div class="card shadow">
             <div class="card-header">
-                Find a Centre 
+              <div class="card-title"> Find a Centre </div>
             </div>
             <div class="card-body">
                 <div class="row justify-content-center">
@@ -50,12 +50,12 @@
 
     <div class="col" *ngIf="isSelected">
      
-            <app-centre-view [centre]="selectedCentre"> </app-centre-view>
+            <app-centre-view [centre]="selectedCentre" [centreChanged]="centreChanged"> </app-centre-view>
             <div class="row">
                 <div class="col">
-                    <div class="card">
+                    <div class="card shadow">
                         <div class="card-header">
-                            All results
+                          <div class="card-title">  All results </div>
                         </div>
                         <div class="card-body">
                         <table class="table table-bordered table-striped table-sm">
@@ -108,4 +108,6 @@
         &nbsp;
     </div>
    
+</div>
+
 </div>

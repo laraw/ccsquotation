@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
+import { Component, OnInit, NgZone, ViewChild, EventEmitter } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
 
@@ -12,17 +12,18 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
 import { MapGeocoder } from '../../core/services/google-maps-custom/map-geocoder';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
-
+import { pulseAnimation } from 'angular-animations';
 
 @Component({
   selector: 'find-a-centre',
   templateUrl: './find-a-centre.component.html',
-  styleUrls: ['./find-a-centre.component.css']
+  styleUrls: ['./find-a-centre.component.css'],
+  animations: [ pulseAnimation({ anchor: 'pulse' }) ]
 })
 export class FindACentreComponent implements OnInit {
   // centres$: Observable<Centre[]>;
   private searchTerms = new Subject<string>();
-
+  private centreChanged: EventEmitter<boolean> = new EventEmitter();
 
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
 
@@ -57,6 +58,8 @@ export class FindACentreComponent implements OnInit {
 
   @ViewChild("placesRef") placesRef : GooglePlaceDirective;
 
+
+
   constructor(private centreService: CentreService, private geocoder: MapGeocoder ) {
 
     
@@ -74,6 +77,7 @@ export class FindACentreComponent implements OnInit {
     }
     this.centreMarkers = [];
     this.selectedCentres = [];
+    this.markerPositions = [];
 
     this.addHomeMarker(address.geometry.location.toJSON());
 
@@ -136,6 +140,7 @@ logCoords(event) {
     this.selectedCentre = centre;
     this.centreMarkers = [];
     this.addCentreMarker(this.selectedCentre.lat,this.selectedCentre.long);
+    this.centreChanged.emit(true);
   }
 
   ngOnInit(): void {
@@ -165,6 +170,8 @@ logCoords(event) {
   deg2rad(deg) {
     return deg * (Math.PI/180)
   }
+
+ 
   
 }
 

@@ -1,21 +1,8 @@
 <div class="animated fadeIn">
-    <div class="row">
-        <div class="col">
-          <div class="card text-white bg-primary text-center">
-            <div class="card-body">
-              <blockquote class="card-bodyquote">
-                <h2> Child care subsidy calculator </h2>
-                <p>Welcome to the child care subsidy calculator. This tool is aimed at providing an estimate of out of pocket cost for your families.</p>
-                
-              </blockquote>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    <div class="card border-info noprint">
+    <div class="card  noprint">
         <div class="card-header ">
-            <h5 class="theme-color w-75 rounded mb-2"> Step 1 - Calculate your child care subsidy entitlement </h5>
+          <div class="card-title"> Step 1 - Calculate your child care subsidy entitlement </div>
         </div>
         <div class="card-body">
             
@@ -26,30 +13,31 @@
                     <div class="col-md-5 col-form-label">
                       <div id="inline-radios" class="form-check form-check-inline mr-1">
                         <input type="radio" name="inline-radios" id="inlineRadio1" value="option1" (change)="setEntitlementOption($event)"   class="form-check-input">
-                        <label for="inlineRadio1" class="form-check-label" style="color: palevioletred; font-weight: 800">I don't know my CCS Entitlements  </label>
+                        <label for="inlineRadio1" class="form-check-label"><strong> I don't know the CCS % and  hours </strong>   </label>
                       </div>
                       <div class="form-check form-check-inline mr-1">
                         <input type="radio" name="inline-radios" id="inlineRadio2" value="option2" (change)="setEntitlementOption($event)" class="form-check-input">
-                        <label for="inlineRadio2" class="form-check-label" style="color: palevioletred; font-weight: 800"> I know my CCS Entitlements   </label>
+                        <label for="inlineRadio2" class="form-check-label"> <strong> I know the CCS % and hours  </strong> </label>
                       </div>
 
                     </div>
                   </div>
         </div>
       </div>
-      <div class="card border-info noprint" *ngIf="ccsCalculateRequired">
+      <div class="card noprint" *ngIf="ccsCalculateRequired">
         <div class="card-header ">
-            <h5 class=" theme-color w-75 rounded mb-2"> Step 2 - Enter your yearly taxable income & activity hours </h5>
+          <div class="card-title"> Step 2 - Enter your yearly taxable income & activity hours </div>
         </div>
         <div class="card-body">
             
 
                 
                 <div class="form-group row">
+                   <div class="col">
                     <label for="income"> Enter your  yearly family taxable income:  </label>
                     <input [(ngModel)]="income" name="income" id="income" type="number" min="0" max="999999" class="form-control" />
-               </div>
-               <div class="form-group row">
+                  </div>
+                  <div class="col">
                     <label for="activityhrs"> Select your activity hours across a fortnight: </label> <br />
                     <select class="form-control form-select mb-3" (change)="setActivityHours($event)">
                     <option> -- Please select -- </option>
@@ -58,7 +46,9 @@
                     <option> 17 to 48 hours </option>
                     <option> more than 48 hours </option>
                     </select>
-                </div>
+                    </div>
+               </div>
+            
                 <!-- <div class="form-group row">
                     <div class="col-md-6 mb-3">
                         &nbsp;
@@ -71,28 +61,31 @@
                
         </div>
       </div>
-      <div class="card border-info noprint" *ngIf="!ccsCalculateRequired">
+      <div class="card  noprint" *ngIf="!ccsCalculateRequired">
         <div class="card-header ">
-            <h5 class=" theme-color w-75 rounded mb-2"> Step 2 - Enter your CCS % and CCS hours across the fortnight </h5>
+          <div class="card-title"> Step 2 - Enter your CCS % and CCS hours across the fortnight </div>
         </div>
         <div class="card-body">
             
 
                 
                 <div class="form-group row">
+                   <div class="col">
                     <label for="ccs"> Your CCS % </label>
                     <input [(ngModel)]="ccs" name="ccs" id="ccs" type="number" class="form-control" (change)="ccsValid($event)" />
+                    </div>
+                    <div class="col">
+                      <label for="ccshrs"> Your CCS hours </label>
+                      <input [(ngModel)]="ccshrs" name="ccshrs" id="ccshrs" type="number" class="form-control" (change)="ccsValid($event)" />
+                    </div>
                </div>
-               <div class="form-group row">
-                <label for="ccshrs"> Your CCS hours </label>
-                <input [(ngModel)]="ccshrs" name="ccshrs" id="ccshrs" type="number" class="form-control" (change)="ccsValid($event)" />
-               </div>
+              
 
         </div>
       </div>
-      <div class="card border-info">
+      <div class="card ">
         <div class="card-header ">
-            <h5 class=" theme-color w-75 rounded mb-2"> Step 3 - Enter your fees and sessions </h5>
+            <div class="card-title"> Step 3 - Enter your fees and sessions </div>
         </div>
         <div class="card-body">
             

@@ -12,6 +12,11 @@ import { CrmRoutingModule } from './crm-routing.module'
 import { EnquiriesComponent } from './enquiries.component';
 import { LeadsComponent } from './leads.component';
 import { ToursComponent } from './tours.component';
+import { FamilyComponent } from './family.component';
+import { SharedModule } from '../shared/shared.module';
+import { ContactEditComponent } from './contact-edit.component';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { NewEnquiryComponent } from './new-enquiry.component';
 
 @NgModule({
   imports: [
@@ -20,7 +25,9 @@ import { ToursComponent } from './tours.component';
     CrmRoutingModule,
     ReactiveFormsModule,
     CommonModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    SharedModule,
+    GooglePlaceModule
     
   ],
   declarations: [
@@ -29,11 +36,14 @@ import { ToursComponent } from './tours.component';
     FamiliesComponent,
     EnquiriesComponent,
     LeadsComponent,
-    ToursComponent
+    ToursComponent,
+    FamilyComponent, 
+    ContactEditComponent,
+    NewEnquiryComponent
 
   ],
   exports: [
-    
+    NewEnquiryComponent
 
   ]
 })

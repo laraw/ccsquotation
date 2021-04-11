@@ -7,31 +7,27 @@
         <div class="col">
             <div class="card">
               <div class="card-header">
-                <strong>Start by typing in a Centre name, suburb or postcode.</strong> 
+                <div class="title">Start by typing in a Centre name, suburb or postcode.</div> 
               </div>
               <div id="search-component" class="card-body">
                 <form action="" method="post" class="form-horizontal">
                   <div class="form-group row">
                     <div class="col-md-12">
-                      <div class="input-group">
-                        <span class="input-group-prepend">
-                          <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
-                        </span>
-                        
+                      <div  class="input-prepend input-group">
+                        <div  class="input-group-prepend">
+                            <span  class="input-group-text"><i  class="fa fa-search"></i></span>
+            
+                        </div>
                         <input type="text" #searchBox id="search-box" (input)="search(searchBox.value)" class="form-control" placeholder="Search">
+            
                       </div>
+                      
                     </div>
                   </div>
    
                 </form>
               </div>
-              <div class="card-footer">
-                <!-- <ul class="search-result">
-                  <li *ngFor="let centre of centres$ | async" >
-                    
-                  </li>
-                </ul> -->
-              </div>
+  
             </div>
           </div>
           

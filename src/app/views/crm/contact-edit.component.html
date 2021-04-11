@@ -1,0 +1,139 @@
+<div class="animated fadeIn" *ngIf="contact">
+    <div class="row">
+        <div class="col">
+            <div class="card card-fixed-height shadow">
+                <div class="card-header">
+                   
+                   <div class="card-title">
+                    <span data-initials="" class="{{contactinitials}}">  </span> <strong> {{ contact.firstName }} {{ contact.lastName }} </strong>
+                   </div> 
+                   <div class="row">
+                       <div class="col">
+                            <strong>Email</strong>
+                       </div>
+                       <div class="col">
+                           <span class="float-right"> <a href="mailto:{{ contact.email }}"> {{ contact.email }} </a> </span>
+
+                       </div>
+                   </div>  
+                   <div class="row">
+                        <div class="col">
+                            <strong>Phone</strong>
+                        </div>
+                        <div class="col">
+                            <span class="float-right"> {{ contact.phone }} </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <app-navi [nav]="leftNav"></app-navi>
+                        
+                </div>
+            </div>
+            
+           
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="col-8">
+            
+             <div class="card shadow">
+                <div class="card-header">
+                    <div class="card-title"> Personal Information </div>
+                </div>
+                <div class="card-body">
+                    &nbsp;
+                    <form [formGroup]="contactEditForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>
+                                    First Name:
+                                    
+                                  </label>
+                                <input type="text" class="form-control"  formControlName="firstName">
+                              </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                  <label>
+                                      Last Name:
+                                      
+                                    </label>
+                                  <input type="text" class="form-control"  formControlName="lastName">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>
+                                     CRN
+                                    
+                                  </label>
+                                <input type="text" class="form-control"  formControlName="crn">
+                              </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                  <label>
+                                      DOB:
+                                      
+                                    </label>
+                                    
+                                        <input class="form-control" id="date-input" formControlName="dob" type="date" name="date-input" placeholder="date">
+                                        <span class="help-block">Please enter a valid date</span>
+                                      
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="if-email" name="if-email" formControlName="email" class="form-control" placeholder="Enter Email.." autocomplete="email">
+                              </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                  <label>
+                                      Phone:
+                                      
+                                    </label>
+                                    <input type="text" class="form-control"  formControlName="phone">
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" formControlName="address" class="form-control" placeholder="Enter address.." ngx-google-places-autocomplete [options]="{types: [],componentRestrictions: { country: 'AU' }
+                            }" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
+                              </div>
+                            </div>
+          
+                          </div>
+
+                          <button class="float-right btn-primary btn" type="submit" [disabled]="!contactEditForm.valid">Update</button>
+                      </form>
+                      
+                </div>
+            </div>
+           
+        </div> 
+     
+    </div>
+    
+</div>

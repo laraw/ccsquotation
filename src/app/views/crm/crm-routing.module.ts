@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ContactEditComponent } from './contact-edit.component';
 import { FamiliesComponent } from './families.component';
+import { FamilyComponent } from './family.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,13 @@ const routes: Routes = [
             component: FamiliesComponent,
             data: {
               title: 'Families'
+            }
+          },
+          {
+            path: 'families-detail/:id',
+            component: FamilyComponent,
+            data: {
+              title: 'detail'
             }
           },
           {
@@ -40,7 +49,14 @@ const routes: Routes = [
             data: {
               title: 'Tours'
             }
-          },                  
+          },       
+          {
+            path: 'contact-edit/:id',
+            component: ContactEditComponent,
+            data: {
+              title: 'Contact Edit'
+            }
+          }           
       
           
     ]

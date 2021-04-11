@@ -1,1 +1,104 @@
+
+
 // Variable overrides
+
+$body-bg: #f3f6f9;
+
+
+
+// NAV-BAR
+$sidebar-nav-link-active-icon-color: #5e72e4;
+$sidebar-nav-link-hover-bg: #5e72e4;
+$sidebar-color: #ffffff;
+$sidebar-bg: rgba(52, 58, 71, 1);
+$sidebar-border-color: rgba(52, 58, 71, 1);
+
+// FONTS
+$font-size-1: 13px;
+$font-size-2: 16px;
+$font-size-3: 17px;
+$font-family-base: "Open Sans", sans-serif;
+$font-weight-1: 400;
+$font-weight-2: 700;
+$font-default-color: #525f7f;
+$font-color-1:#333333;
+
+// INPUT-GROUP
+$input-group-addon-color: #ffffff;
+$input-group-addon-bg: #5e72e4;
+$input-border-radius: 0.6rem;
+
+//ng-select
+$input-group-addon-color2: #8f8f8f;
+
+// CARD
+$card-border: 1px solid rgba(0,0,0,.05);
+$card-border-radius: 0.2rem;
+$card-text-default-color: $font-default-color;
+$dashboard-card-cap-bg: $font-default-color ;
+$dashboard-card-cap-color: #FFFFFF;
+$panel-card-border-radius: 5px;
+$card-header-margin-bottom: 0;
+$card-header-padding: 1.25rem 1.5rem;
+$card-cap-bg: #fff;
+$card-: green;
+
+// TABLE
+$table-hover-bg: #afe2e5;
+$table-align: center;
+
+$branding-default-disabled-contrast-colour: #dbdcdd;
+$branding-default-text-colour: #4d4f53;
+$branding-primary-contrast-colour: #2b2d30;
+$branding-whitespace: #fff;
+$color-divider: $branding-default-disabled-contrast-colour;
+$branding-form-component-colour: #717275;
+$branding-primary-variation1-contrast-colour: #2b2d30;
+$branding-background-surface-contrast-colour: $branding-default-text-colour;
+$branding-background-surface-colour: #ededed;
+$branding-primary-colour: #ab8ab8;
+$branding-error-colour: #e00;
+$branding-input-font-family: $font-family-base;
+$branding-input-disabled-font-family: $font-family-base;
+
+$label-font-size: $font-size-2;
+$input-font-size: $font-size-2;
+$grid-header-column-font-weight: 700;
+$label-font-weight: 100;
+$grid-pager-disabled: #ccc;
+
+$input-disabled-font-family: $branding-input-disabled-font-family;
+$input-font-family: $branding-input-font-family;
+$color-divider: $branding-default-disabled-contrast-colour;
+$color-control-border: $color-divider;
+$color-control-errors: $branding-error-colour;
+$color-primary-contrast: $branding-primary-contrast-colour;
+$color-whitespace: $branding-whitespace;
+$grid-body-divider: $color-divider;
+$grid-header-colour: $branding-form-component-colour;
+$color-background-surface-contrast: $branding-background-surface-contrast-colour;
+$color-background-surface: $branding-background-surface-colour;
+$color-control-hover: $branding-primary-colour;
+
+//PROGRESS GROUP BARS
+$progress-group-bars-padding-top: 20px;
+$dashboard-progress-height: 2rem;
+
+$colour1: #f69c97;
+$colour2: #60c4cb;
+$colour3: #ffe59f;
+$colour4: #2dea57b0;
+$colour5: #8A74A6;
+
+$colour1-light: lighten($colour1, 15%);
+$colour2-light: lighten($colour2, 30%);
+$colour3-light: lighten($colour3, 25%);
+$colour4-light: lighten($colour4, 30%);
+$colour5-light: lighten($colour5, 30%);
+
+
+$colour1-icon: #f5a49f;
+$colour2-icon: #60c4cb;
+$colour3-icon: #f8c33b;
+
+$small-progress-height: 1rem;
