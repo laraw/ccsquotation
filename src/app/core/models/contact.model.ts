@@ -4,17 +4,14 @@ export interface Contact {
     id: number;
     firstName: string;
     lastName: string;
-    dob: string;
-    crn: string;
+    dob?: string;
+    crn?: string;
     email: string;
-    phone: string;
+    phone?: string;
     
-    address: string;
-    suburb: string;
-    state: string;
-    postcode: string;
-    relatedContactId: number;
-    children: number[];
-    addressLat: number;
-    addresssLng: number;
+    address?: string;
+    relatedContactId?: number;
+    children?: number[];
+    addressLat?: number;
+    addresssLng?: number;
 }

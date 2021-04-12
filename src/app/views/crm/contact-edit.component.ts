@@ -81,9 +81,7 @@ export class ContactEditComponent implements OnInit {
                 email: contact.email,
                 phone: contact.phone,
                 address: contact.address,
-                suburb: contact.suburb,
-                state: contact.state,
-                postcode: contact.postcode,
+               
 
               });
             }

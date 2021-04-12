@@ -21,11 +21,13 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 
 
 export class NewEnquiryComponent implements OnInit {
-    @ViewChild("placesRef") placesRef : GooglePlaceDirective;
+    @ViewChild("address") address : GooglePlaceDirective;
     @ViewChild('largeModal') public largeModal: ModalDirective;
     @Input() centreId: number;
-    contact: Contact;
-    child: Child;
+    contactaddress: string;
+    addressLat: number;
+    addressLng: number;
+  
     contactinitials: string = "";
 
     
@@ -42,7 +44,7 @@ export class NewEnquiryComponent implements OnInit {
         childlastName: new FormControl('', Validators.required),
         childcrn: new FormControl(''),
         childdob: new FormControl(''),
-        startdate: new FormControl(''),
+        startdate: new FormControl('', Validators.required),
         tourdate: new FormControl('')
       });
                     
@@ -65,10 +67,69 @@ export class NewEnquiryComponent implements OnInit {
     
       }
     
-  
+      cancel(): void {
+        this.newEnquiryForm.reset();
+        this.largeModal.hide();
+      }
 
       onSubmit(): void {
-          console.log(this.newEnquiryForm.value)
+          console.log(this.newEnquiryForm.value);
+          let childId: number;
+          let child: Child = {
+            id: null,
+            firstName: this.newEnquiryForm.value.contactfirstName,
+            lastName: this.newEnquiryForm.value.contactlastName,
+            dob: this.newEnquiryForm.value.dob,
+            crn: this.newEnquiryForm.value.crn,
+
+            
+           };
+
+           this.childService.addChild(child).subscribe(
+              
+              
+              response =>  {
+                
+                childId = response.id;
+
+              }
+             
+             
+             );
+
+            let contact: Contact = {
+              id: null,
+              firstName: this.newEnquiryForm.value.contactfirstName,
+              lastName: this.newEnquiryForm.value.contactlastName,
+              dob: this.newEnquiryForm.value.dob,
+              crn: this.newEnquiryForm.value.crn,
+              email: this.newEnquiryForm.value.email,
+              phone: this.newEnquiryForm.value.phone,
+              
+              address: this.newEnquiryForm.value.address,
+              
+              addressLat: this.addressLat,
+              addresssLng: this.addressLng
+             };
+             this.contactService.addContact(contact).subscribe(response => { 
+              let today = new Date().toISOString().slice(0, 10);
+                let enquiry: Enquiry = {
+                  id: null,
+                  centreId: this.centreId,
+                  children: [ childId ],
+                  preferredStartDate: this.newEnquiryForm.value.contactfirstName,
+                  contactId: response.id,
+                  enquiryDate: today
+
+                }
+                this.enquiryService.addEnquiry(enquiry).subscribe(() => {  this.toastr.success("The enquiry was added successfully."); this.cancel(); } )
+               
+               
+              
+              
+             });
+
+          
             // console.log(this.newEnquiryForm.value.address);
             // this.contact.firstName = this.newEnquiryForm.value.contactfirstName;
             // this.contact.lastName = this.newEnquiryForm.value.contactlastName;
@@ -82,9 +143,9 @@ export class NewEnquiryComponent implements OnInit {
       public handleAddressChange(address: Address) {
         // Do some stuff
 
-        this.contact.address = address.formatted_address;
-        this.contact.addressLat = address.geometry.location.lat();        
-        this.contact.addresssLng = address.geometry.location.lng();
+        this.contactaddress = address.formatted_address;
+        this.addressLat = address.geometry.location.lat();        
+        this.addressLng = address.geometry.location.lng();
 
        
         
